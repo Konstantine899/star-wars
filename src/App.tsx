@@ -1,7 +1,8 @@
 import React from "react";
+import StarWars from "./components/StarWars/StarWars";
 
 function App() {
-  return <h1>Проверка работоспособности</h1>;
+  return <StarWars />;
 }
 
 export default App;

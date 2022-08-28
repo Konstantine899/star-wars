@@ -1,11 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import Header from "../Header/Header";
 import RandomPlanet from "../RandomPlanet/RandomPlanet";
 import "./StarWars.css";
 import ItemList from "../ItemList/ItemList";
 import PersonDetails from "../PersonDetails/PersonDetails";
+import { useSelector } from "react-redux";
 
-const StarWars = () => {
+const StarWars: FC = () => {
+  const state = useSelector((state) => state);
+  console.log(state);
   return (
     <>
       <Header />

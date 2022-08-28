@@ -4,11 +4,11 @@ import RandomPlanet from "../RandomPlanet/RandomPlanet";
 import "./StarWars.css";
 import ItemList from "../ItemList/ItemList";
 import PersonDetails from "../PersonDetails/PersonDetails";
-import { useSelector } from "react-redux";
+import { useTypedSelector } from "../../store/hooks/useTypedSelector";
 
 const StarWars: FC = () => {
-  const state = useSelector((state) => state);
-  console.log(state);
+  const { results } = useTypedSelector((state) => state.people);
+  console.log(results);
   return (
     <>
       <Header />

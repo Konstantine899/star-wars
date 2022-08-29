@@ -23,7 +23,7 @@ export interface IPeopleState {
 }
 
 export interface IInitialState {
-  results: IPeopleState[] | IStarship[] | IPlanet[];
+  results: IPeopleState[];
   loading: boolean;
   error: null | string;
 }

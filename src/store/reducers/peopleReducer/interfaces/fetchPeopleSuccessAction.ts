@@ -3,7 +3,6 @@ import { IPeopleState } from "../../../initialState/interface/IInitialState";
 
 export interface FetchPeopleAction {
   type: PeopleActionTyps.FETCH_PEOPLE;
-  // payload: IPeopleState[];
 }
 export interface FetchPeopleSuccessAction {
   type: PeopleActionTyps.FETCH_PEOPLE_SUCCESS;

@@ -1,8 +1,8 @@
 import {
   FetchPeopleAction,
   FetchPeopleErrorAction,
-  FetchPeopleSuccessAction,
-} from "../interfaces";
+} from "../interfaces/fetchPeopleSuccessAction";
+import { FetchPeopleSuccessAction } from "../interfaces/fetchPeopleSuccessAction";
 
 export type TPeopleAction =
   | FetchPeopleAction

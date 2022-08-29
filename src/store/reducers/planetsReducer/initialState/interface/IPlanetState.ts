@@ -9,15 +9,8 @@ export interface IPlanet {
   population: string;
 }
 
-export interface IResultsState {
-  id: string;
-  name: string;
-  gender: string;
-  birth_year: string;
-}
-
-export interface IPeopleState {
-  results: IResultsState[];
+export interface IPlanetState {
+  results: IPlanet[];
   loading: boolean;
   error: null | string;
 }

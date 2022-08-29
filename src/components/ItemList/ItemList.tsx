@@ -6,9 +6,10 @@ import { useActions } from "../../store/hooks/useActions";
 const ItemList = () => {
   const resultsPeople = useTypedSelector((state) => state.people);
 
-  const { getAllPeople, getAllStarships } = useActions();
+  const { getAllPeople, getAllStarships, getAllPlanet } = useActions();
 
   useEffect(() => {
+    getAllPlanet();
     getAllPeople();
     getAllStarships();
   }, []);

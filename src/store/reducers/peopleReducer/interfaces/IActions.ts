@@ -1,12 +1,12 @@
 import { PeopleActionTypes } from "../enum/PeopleActionTypes";
-import { IResultsState } from "../initialState/interface/IResultsState";
+import { IPeople } from "../initialState/interface/IPeople";
 
 export interface IFetchPeopleAction {
   type: PeopleActionTypes.FETCH_PEOPLE;
 }
 export interface IFetchPeopleSuccessActions {
   type: PeopleActionTypes.FETCH_PEOPLE_SUCCESS;
-  payload: IResultsState[];
+  payload: IPeople[];
 }
 export interface IFetchPeopleErrorAction {
   type: PeopleActionTypes.FETCH_PEOPLE_ERROR;

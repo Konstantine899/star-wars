@@ -1,4 +1,4 @@
-import { IPeopleState } from "./interface/IResultsState";
+import { IPeopleState } from "./interface/IPeople";
 
 export const peopleState: IPeopleState = {
   results: [],

@@ -1,5 +1,5 @@
 import { peopleState } from "./initialState/peopleState";
-import { IPeopleState } from "./initialState/interface/IResultsState";
+import { IPeopleState } from "./initialState/interface/IPeople";
 import { TPeopleAction } from "./types/TPeopleAction";
 import { PeopleActionTypes } from "./enum/PeopleActionTypes";
 

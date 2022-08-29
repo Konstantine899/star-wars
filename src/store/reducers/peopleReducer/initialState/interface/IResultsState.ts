@@ -9,22 +9,15 @@ export interface IPlanet {
   population: string;
 }
 
-export interface IStarship {
-  name: string;
-  model: string;
-  cost_in_credits: string;
-  starship_class: string;
-}
-
-export interface IPeopleState {
+export interface IResultsState {
   id: string;
   name: string;
   gender: string;
   birth_year: string;
 }
 
-export interface IInitialState {
-  results: IPeopleState[];
+export interface IPeopleState {
+  results: IResultsState[];
   loading: boolean;
   error: null | string;
 }

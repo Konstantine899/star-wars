@@ -1,10 +1,10 @@
 import {
-  FetchPeopleAction,
-  FetchPeopleErrorAction,
-} from "../interfaces/fetchPeopleSuccessAction";
-import { FetchPeopleSuccessAction } from "../interfaces/fetchPeopleSuccessAction";
+  IFetchPeopleAction,
+  IFetchPeopleErrorAction,
+} from "../interfaces/IActions";
+import { IFetchPeopleSuccessActions } from "../interfaces/IActions";
 
 export type TPeopleAction =
-  | FetchPeopleAction
-  | FetchPeopleSuccessAction
-  | FetchPeopleErrorAction;
+  | IFetchPeopleAction
+  | IFetchPeopleSuccessActions
+  | IFetchPeopleErrorAction;

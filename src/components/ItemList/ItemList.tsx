@@ -4,22 +4,25 @@ import { useTypedSelector } from "../../store/hooks/useTypedSelector";
 import { useActions } from "../../store/hooks/useActions";
 
 const ItemList = () => {
-  const { results } = useTypedSelector((state) => state.people);
+  const resultsPeople = useTypedSelector((state) => state.people);
 
-  const { fetchPeople } = useActions();
+  const { getAllPeople, getAllStarships } = useActions();
 
   useEffect(() => {
-    fetchPeople();
+    getAllPeople();
+    getAllStarships();
   }, []);
 
   return (
-    <ul className="item-list">
-      {results.map((item) => (
-        <li className="item-list-element" key={item.name}>
-          {item.name}
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="item-list">
+        {resultsPeople.results.map((item) => (
+          <li className="item-list-element" key={item.name}>
+            {item.name}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 

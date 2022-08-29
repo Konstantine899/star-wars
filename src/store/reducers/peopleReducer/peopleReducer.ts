@@ -1,22 +1,22 @@
-import { initialState } from "../../initialState/initialState";
-import { IInitialState } from "../../initialState/interface/IInitialState";
+import { peopleState } from "./initialState/peopleState";
+import { IPeopleState } from "./initialState/interface/IResultsState";
 import { TPeopleAction } from "./types/TPeopleAction";
-import { PeopleActionTyps } from "./enum/PeopleActionTyps";
+import { PeopleActionTypes } from "./enum/PeopleActionTypes";
 
 export const peopleReducer = (
-  state = initialState,
+  state = peopleState,
   action: TPeopleAction
-): IInitialState => {
+): IPeopleState => {
   switch (action.type) {
-    case PeopleActionTyps.FETCH_PEOPLE:
+    case PeopleActionTypes.FETCH_PEOPLE:
       return { loading: true, error: null, results: [] };
-    case PeopleActionTyps.FETCH_PEOPLE_SUCCESS:
+    case PeopleActionTypes.FETCH_PEOPLE_SUCCESS:
       return {
         loading: false,
         error: null,
         results: action.payload,
       };
-    case PeopleActionTyps.FETCH_PEOPLE_ERROR:
+    case PeopleActionTypes.FETCH_PEOPLE_ERROR:
       return { loading: false, error: action.payload, results: [] };
     default:
       return state;

@@ -1,16 +1,15 @@
 import React, { useEffect } from "react";
 import "./ItemList.css";
 import { useTypedSelector } from "../../store/hooks/useTypedSelector";
-import { useDispatch } from "react-redux";
-import { fetchPeople } from "../../store/action-creators/fetchPeople";
+import { useActions } from "../../store/hooks/useActions";
 
 const ItemList = () => {
   const { results } = useTypedSelector((state) => state.people);
 
-  const dispatch = useDispatch();
+  const { fetchPeople } = useActions();
   useEffect(() => {
-    dispatch<any>(fetchPeople());
-  }, [dispatch]);
+    fetchPeople();
+  }, []);
 
   return (
     <ul className="item-list">

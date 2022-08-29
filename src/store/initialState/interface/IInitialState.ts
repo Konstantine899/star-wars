@@ -17,6 +17,7 @@ export interface IStarship {
 }
 
 export interface IPeopleState {
+  id: string;
   name: string;
   gender: string;
   birth_year: string;

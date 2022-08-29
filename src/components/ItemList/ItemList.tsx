@@ -7,6 +7,7 @@ const ItemList = () => {
   const { results } = useTypedSelector((state) => state.people);
 
   const { fetchPeople } = useActions();
+
   useEffect(() => {
     fetchPeople();
   }, []);

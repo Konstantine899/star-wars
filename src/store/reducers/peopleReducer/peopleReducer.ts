@@ -11,7 +11,11 @@ export const peopleReducer = (
     case PeopleActionTyps.FETCH_PEOPLE:
       return { loading: true, error: null, results: [] };
     case PeopleActionTyps.FETCH_PEOPLE_SUCCESS:
-      return { loading: false, error: null, results: action.payload };
+      return {
+        loading: false,
+        error: null,
+        results: action.payload,
+      };
     case PeopleActionTyps.FETCH_PEOPLE_ERROR:
       return { loading: false, error: action.payload, results: [] };
     default:

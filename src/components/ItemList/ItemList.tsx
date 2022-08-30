@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import "./ItemList.css";
 import { useTypedSelector } from "../../store/hooks/useTypedSelector";
 import { useActions } from "../../store/hooks/useActions";
 
-const ItemList = () => {
+const ItemList: FC = () => {
   const resultsPeople = useTypedSelector((state) => state.people);
+  const resultsStarships = useTypedSelector((state) => state.starships);
+  const resultsPlanets = useTypedSelector((state) => state.planets);
 
   const { getAllPeople, getAllStarships, getAllPlanet } = useActions();
 
@@ -13,6 +15,9 @@ const ItemList = () => {
     getAllPeople();
     getAllStarships();
   }, []);
+
+  console.log("resultsStarships", resultsStarships);
+  console.log("resultsPlanets", resultsPlanets);
 
   return (
     <>

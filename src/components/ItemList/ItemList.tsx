@@ -1,29 +1,25 @@
 import React, { FC, useEffect } from "react";
 import "./ItemList.css";
-import { useTypedSelector } from "../../store/hooks/useTypedSelector";
 import { useActions } from "../../store/hooks/useActions";
+import { useStarWars } from "../../hooks/useStarWars";
 
 const ItemList: FC = () => {
-  const resultsPeople = useTypedSelector((state) => state.people);
-  const resultsStarships = useTypedSelector((state) => state.starships);
-  const resultsPlanets = useTypedSelector((state) => state.planets);
-
-  const { getAllPeople, getAllStarships, getAllPlanet } = useActions();
+  const { allPeople, getPeople } = useStarWars();
+  const { getAllPeople } = useActions();
 
   useEffect(() => {
-    getAllPlanet();
     getAllPeople();
-    getAllStarships();
   }, []);
-
-  console.log("resultsStarships", resultsStarships);
-  console.log("resultsPlanets", resultsPlanets);
 
   return (
     <>
       <ul className="item-list">
-        {resultsPeople.results.map((item) => (
-          <li className="item-list-element" key={item.name}>
+        {allPeople.map((item) => (
+          <li
+            className="item-list-element"
+            key={item.name}
+            onClick={() => getPeople(item.id)}
+          >
             {item.name}
           </li>
         ))}

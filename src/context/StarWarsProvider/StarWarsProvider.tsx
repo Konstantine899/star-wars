@@ -1,5 +1,5 @@
 import { Ichildren } from "../interface/Ichildren";
-import { useState } from "react";
+import React, { useState } from "react";
 import { IPeople } from "../../store/reducers/peopleReducer/initialState/interface/IPeople";
 import { useTypedSelector } from "../../store/hooks/useTypedSelector";
 import { StarWarsContext } from "../StarWarsContext";
@@ -18,7 +18,13 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
 
   return (
     <StarWarsContext.Provider
-      value={{ allPeople, allStarships, allPlanets, getPeople, people }}
+      value={{
+        allPeople,
+        allStarships,
+        allPlanets,
+        getPeople,
+        people,
+      }}
     >
       {children}
     </StarWarsContext.Provider>

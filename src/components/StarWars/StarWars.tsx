@@ -1,15 +1,15 @@
 import { FC } from "react";
 import Header from "../Header/Header";
-import RandomPlanet from "../RandomPlanet/RandomPlanet";
 import "./StarWars.css";
 import ItemList from "../ItemList/ItemList";
 import PersonDetails from "../PersonDetails/PersonDetails";
+import RandomPlanetContainer from "../RandomPlanet/RandomPlanetContainer/RandomPlanetContainer";
 
 const StarWars: FC = () => {
   return (
     <>
       <Header />
-      <RandomPlanet />
+      <RandomPlanetContainer />
       <div className="detailed-information">
         <ItemList />
         <PersonDetails />

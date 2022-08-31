@@ -1,32 +1,27 @@
-import React, { FC } from "react";
-import { IPlanet } from "../../store/reducers/planetsReducer/initialState/interface/IPlanetState";
+import React from "react";
 
-interface IProps {
-  planet: IPlanet;
-}
-
-const RandomPlanet: FC<IProps> = ({ planet }) => {
+const RandomPlanetDefault = () => {
   return (
     <div className="random-planet jumbotron rounded">
       <img
         className="planet-image"
-        src={`https://starwars-visualguide.com/assets/img/planets/${planet.id}.jpg`}
+        src={`https://starwars-visualguide.com/assets/img/planets/5.jpg`}
         alt=""
       />
       <div>
-        <h4>{planet.name}</h4>
+        <h4>Dagobah</h4>
         <ul className="random-planet">
           <li className="random-planet-list-item">
             <span className="term">Population</span>
-            <span>{planet.population}</span>
+            <span>123124</span>
           </li>
           <li className="random-planet-list-item">
             <span className="term">Rotation Period</span>
-            <span>{planet.rotation_period}</span>
+            <span>43</span>
           </li>
           <li className="random-planet-list-item">
             <span className="term">Diameter</span>
-            <span>{planet.diameter}</span>
+            <span>100</span>
           </li>
         </ul>
       </div>
@@ -34,4 +29,4 @@ const RandomPlanet: FC<IProps> = ({ planet }) => {
   );
 };
 
-export default RandomPlanet;
+export default RandomPlanetDefault;

@@ -5,6 +5,7 @@ import { useStarWars } from "../../../hooks/useStarWars";
 import { IPlanet } from "../../../store/reducers/planetsReducer/initialState/interface/IPlanetState";
 import RandomPlanetDefault from "../RandomPlanetDefault/RandomPlanetDefault";
 import RandomPlanet from "../RandomPlanet";
+import { useInterval } from "../../../hooks/useInterval";
 
 const RandomPlanetContainer = () => {
   const [planet, setPlanet] = useState<IPlanet | null>(null);
@@ -16,14 +17,12 @@ const RandomPlanetContainer = () => {
     getAllPlanet();
   }, []);
 
-  const updateRandomPlanet = () => {
+  useInterval(() => {
     const id = (Math.floor(Math.random() * 10) + 2).toString();
     allPlanets.filter((item) => {
       if (item.id === id) return setPlanet(item);
     });
-  };
-
-  setInterval(() => updateRandomPlanet(), 10000);
+  }, 1000);
 
   return (
     <>

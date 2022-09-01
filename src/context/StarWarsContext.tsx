@@ -9,7 +9,11 @@ interface IContext {
   allStarships: IStarship[];
   allPlanets: IPlanet[];
   getPeople: (id: string) => void;
+  getPlanet: (id: string) => void;
+  getStarship: (id: string) => void;
   people: IPeople | null;
+  planet: IPlanet | null;
+  starship: IStarship | null;
 }
 
 export const StarWarsContext = createContext<IContext>({} as IContext);

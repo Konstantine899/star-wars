@@ -1,9 +1,9 @@
 import React, { FC, useEffect } from "react";
-import "./ItemList.css";
-import { useActions } from "../../store/hooks/useActions";
-import { useStarWars } from "../../hooks/useStarWars";
+import "./PersonList.css";
+import { useActions } from "../../../../store/hooks/useActions";
+import { useStarWars } from "../../../../hooks/useStarWars";
 
-const ItemList: FC = () => {
+const PersonList: FC = () => {
   const { allPeople, getPeople } = useStarWars();
   const { getAllPeople } = useActions();
 
@@ -28,4 +28,4 @@ const ItemList: FC = () => {
   );
 };
 
-export default ItemList;
+export default PersonList;

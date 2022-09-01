@@ -1,20 +1,20 @@
-.person-details {
+.card-details {
   display: flex;
-  margin-top: 1rem;
   flex-direction: row;
   padding: 1rem;
+  margin: 0 0 0 20px;
 }
 
-.person-details .person-image {
+.card-details .card-image {
   width: 30%;
   height: 30%;
   border-radius: 10px;
 }
 
-.person-details .list-group-item {
+.card-details .list-group-item {
   padding: 0.25rem;
 }
 
-.person-details .list-group-item .term {
+.card-details .list-group-item .term {
   margin-right: 0.5rem;
 }

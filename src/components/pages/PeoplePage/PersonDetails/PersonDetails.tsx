@@ -1,6 +1,6 @@
 import React from "react";
 import "./PersonDetails.css";
-import { useStarWars } from "../../hooks/useStarWars";
+import { useStarWars } from "../../../../hooks/useStarWars";
 
 const PersonDetails = () => {
   const { people } = useStarWars();
@@ -8,9 +8,9 @@ const PersonDetails = () => {
   return (
     <>
       {people === null ? null : (
-        <div className="person-details card">
+        <div className="card-details card">
           <img
-            className="person-image"
+            className="card-image"
             src={`https://starwars-visualguide.com/assets/img/characters/${people.id}.jpg`}
             alt=""
           />

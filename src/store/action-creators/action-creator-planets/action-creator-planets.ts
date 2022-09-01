@@ -24,7 +24,7 @@ function transformPlanet(body: IPlanetState) {
   }));
 }
 
-export const getAllPlanet = () => {
+export const getAllPlanets = () => {
   return async (dispatch: Dispatch<TPlanetAction>) => {
     try {
       dispatch({ type: PlanetActionTypes.FETCH_PLANET });

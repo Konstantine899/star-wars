@@ -10,11 +10,11 @@ import { useInterval } from "../../../hooks/useInterval";
 const RandomPlanetContainer = () => {
   const [planet, setPlanet] = useState<IPlanet | null>(null);
 
-  const { getAllPlanet } = useActions();
+  const { getAllPlanets } = useActions();
   const { allPlanets } = useStarWars();
 
   useEffect(() => {
-    getAllPlanet();
+    getAllPlanets();
   }, []);
 
   useInterval(() => {

@@ -1,10 +1,25 @@
 import React from "react";
 import Row from "../Row/Row";
-import PlanetList from "./PlanetList/PlanetList";
 import PlanetDetails from "./PlanetDetails/PlanetDetails";
+import ItemList from "../ItemList/ItemList";
+import { useStarWars } from "../../../hooks/useStarWars";
+import { useActions } from "../../../store/hooks/useActions";
 
 const PlanetsPage = () => {
-  return <Row left={<PlanetList />} right={<PlanetDetails />} />;
+  const { allPlanets, getPlanet } = useStarWars();
+  const { getAllPlanets } = useActions();
+  return (
+    <Row
+      left={
+        <ItemList
+          data={allPlanets}
+          onItemSelected={getPlanet}
+          allActions={getAllPlanets}
+        />
+      }
+      right={<PlanetDetails />}
+    />
+  );
 };
 
 export default PlanetsPage;

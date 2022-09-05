@@ -5,6 +5,7 @@ import { useTypedSelector } from "../../store/hooks/useTypedSelector";
 import { StarWarsContext } from "../StarWarsContext";
 import { IPlanet } from "../../store/reducers/planetsReducer/initialState/interface/IPlanetState";
 import { IStarship } from "../../store/reducers/starshipReducer/initialState/interface/IStarshipState";
+import { ImagesUrl } from "../enum/ImagesUrl";
 
 export const StarWarsProvider = ({ children }: Ichildren) => {
   const [people, setPeople] = useState<IPeople | null>(null);
@@ -32,6 +33,18 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
     });
   };
 
+  const getPersonImage = (id: string) => {
+    return `${ImagesUrl.BASE_URL}${ImagesUrl.CHARASTERS_URL}${id}${ImagesUrl.JPG}`;
+  };
+
+  const getPlanetImage = (id: string) => {
+    return `${ImagesUrl.BASE_URL}${ImagesUrl.PLANETS_URL}${id}${ImagesUrl.JPG}`;
+  };
+
+  const getStarshipImage = (id: string) => {
+    return `${ImagesUrl.BASE_URL}${ImagesUrl.STARSHIPS_URL}${id}${ImagesUrl.JPG}`;
+  };
+
   return (
     <StarWarsContext.Provider
       value={{
@@ -44,6 +57,9 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         people,
         planet,
         starship,
+        getPersonImage,
+        getPlanetImage,
+        getStarshipImage,
       }}
     >
       {children}

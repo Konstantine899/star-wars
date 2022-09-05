@@ -4,7 +4,7 @@ import { IPeople } from "../store/reducers/peopleReducer/initialState/interface/
 import { IStarship } from "../store/reducers/starshipReducer/initialState/interface/IStarshipState";
 import { IPlanet } from "../store/reducers/planetsReducer/initialState/interface/IPlanetState";
 
-interface IContext {
+interface IStarWarsCreateContext {
   allPeople: IPeople[];
   allStarships: IStarship[];
   allPlanets: IPlanet[];
@@ -14,6 +14,11 @@ interface IContext {
   people: IPeople | null;
   planet: IPlanet | null;
   starship: IStarship | null;
+  getPersonImage: (id: string) => string;
+  getPlanetImage: (id: string) => string;
+  getStarshipImage: (id: string) => string;
 }
 
-export const StarWarsContext = createContext<IContext>({} as IContext);
+export const StarWarsContext = createContext<IStarWarsCreateContext>(
+  {} as IStarWarsCreateContext
+);

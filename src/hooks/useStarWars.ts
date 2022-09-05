@@ -12,6 +12,9 @@ export const useStarWars = () => {
     people,
     planet,
     starship,
+    getPersonImage,
+    getPlanetImage,
+    getStarshipImage,
   } = useContext(StarWarsContext);
   return {
     allPeople,
@@ -23,5 +26,8 @@ export const useStarWars = () => {
     people,
     planet,
     starship,
+    getPersonImage,
+    getPlanetImage,
+    getStarshipImage,
   };
 };

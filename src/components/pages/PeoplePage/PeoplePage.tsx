@@ -1,13 +1,22 @@
-import React from "react";
-import PersonDetails from "./PersonDetails/PersonDetails";
+import React, { useEffect, useState } from "react";
 import Row from "../Row/Row";
 import ItemList from "../ItemList/ItemList";
 import { useStarWars } from "../../../hooks/useStarWars";
 import { useActions } from "../../../store/hooks/useActions";
+import ItemDetails from "../ItemDetails/ItemDetails";
+import Details from "../ItemDetails/Details/Details";
 
 const PeoplePage = () => {
-  const { allPeople, getPeople } = useStarWars();
+  const [image, setImage] = useState("");
+  const { allPeople, getPeople, people, getPersonImage } = useStarWars();
+
   const { getAllPeople } = useActions();
+
+  useEffect(() => {
+    if (people === null) return;
+    setImage(getPersonImage(people.id));
+  }, [people, getPersonImage]);
+
   return (
     <>
       <Row
@@ -18,7 +27,12 @@ const PeoplePage = () => {
             allActions={getAllPeople}
           />
         }
-        right={<PersonDetails />}
+        right={
+          <ItemDetails data={people} image={image}>
+            <Details field="gender: " label={people?.gender} />
+            <Details field="Birth Year: " label={people?.birth_year} />
+          </ItemDetails>
+        }
       />
     </>
   );

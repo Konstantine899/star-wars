@@ -1,0 +1,19 @@
+.error-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  color: orangered;
+}
+
+.error-indicator img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+.error-indicator .boom {
+  font-size: 1.7rem;
+}

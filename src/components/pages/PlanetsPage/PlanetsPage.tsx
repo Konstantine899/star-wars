@@ -9,7 +9,8 @@ import Details from "../ItemDetails/Details/Details";
 const PlanetsPage = () => {
   const [image, setImage] = useState("");
 
-  const { allPlanets, getPlanet, planet, getPlanetImage } = useStarWars();
+  const { allPlanets, getPlanet, planet, getPlanetImage, loadingPlanets } =
+    useStarWars();
   const { getAllPlanets } = useActions();
 
   useEffect(() => {
@@ -24,10 +25,11 @@ const PlanetsPage = () => {
           data={allPlanets}
           onItemSelected={getPlanet}
           allActions={getAllPlanets}
+          loading={loadingPlanets}
         />
       }
       right={
-        <ItemDetails data={planet} image={image}>
+        <ItemDetails data={planet} image={image} loading={loadingPlanets}>
           <Details field="Diameter: " label={planet?.diameter} />
           <Details field="Rotation Period: " label={planet?.rotation_period} />
           <Details field="Orbital Period: " label={planet?.orbital_period} />

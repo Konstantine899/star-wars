@@ -8,8 +8,13 @@ import Details from "../ItemDetails/Details/Details";
 
 const StarshipsPage = () => {
   const [image, setImage] = useState("");
-  const { allStarships, getStarship, starship, getStarshipImage } =
-    useStarWars();
+  const {
+    allStarships,
+    getStarship,
+    starship,
+    getStarshipImage,
+    loadingStarships,
+  } = useStarWars();
   const { getAllStarships } = useActions();
 
   useEffect(() => {
@@ -24,10 +29,11 @@ const StarshipsPage = () => {
           data={allStarships}
           onItemSelected={getStarship}
           allActions={getAllStarships}
+          loading={loadingStarships}
         />
       }
       right={
-        <ItemDetails data={starship} image={image}>
+        <ItemDetails data={starship} image={image} loading={loadingStarships}>
           <Details field="Model: " label={starship?.model} />
           <Details field="Starship Class: " label={starship?.starship_class} />
           <Details

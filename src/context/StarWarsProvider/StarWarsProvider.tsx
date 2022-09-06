@@ -14,6 +14,9 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
   const allPeople = useTypedSelector((state) => state.people.results);
   const allStarships = useTypedSelector((state) => state.starships.results);
   const allPlanets = useTypedSelector((state) => state.planets.results);
+  const loadingPeople = useTypedSelector((state) => state.people.loading);
+  const loadingStarships = useTypedSelector((state) => state.starships.loading);
+  const loadingPlanets = useTypedSelector((state) => state.planets.loading);
 
   const getPeople = (id: string) => {
     allPeople.filter((item) => {
@@ -60,6 +63,9 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         getPersonImage,
         getPlanetImage,
         getStarshipImage,
+        loadingPeople,
+        loadingStarships,
+        loadingPlanets,
       }}
     >
       {children}

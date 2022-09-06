@@ -8,12 +8,13 @@ interface IItemDetails {
   data: IPeople | IPlanet | IStarship | null;
   image: string;
   children: JSX.Element | JSX.Element[];
+  loading: boolean;
 }
 
-const ItemDetails: FC<IItemDetails> = ({ children, data, image }) => {
+const ItemDetails: FC<IItemDetails> = ({ children, data, image, loading }) => {
   return (
     <>
-      {data === null ? null : (
+      {data === null || loading ? null : (
         <div className="card-details card">
           <img className="card-image" src={image} alt="" />
 

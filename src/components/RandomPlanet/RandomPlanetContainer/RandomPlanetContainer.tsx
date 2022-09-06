@@ -22,7 +22,7 @@ const RandomPlanetContainer = () => {
     allPlanets.filter((item) => {
       if (item.id === id) return setPlanet(item);
     });
-  }, 1000);
+  }, 5000);
 
   return (
     <>

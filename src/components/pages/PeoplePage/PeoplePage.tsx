@@ -8,7 +8,8 @@ import Details from "../ItemDetails/Details/Details";
 
 const PeoplePage = () => {
   const [image, setImage] = useState("");
-  const { allPeople, getPeople, people, getPersonImage } = useStarWars();
+  const { allPeople, getPeople, people, getPersonImage, loadingPeople } =
+    useStarWars();
 
   const { getAllPeople } = useActions();
 
@@ -25,10 +26,11 @@ const PeoplePage = () => {
             data={allPeople}
             onItemSelected={getPeople}
             allActions={getAllPeople}
+            loading={loadingPeople}
           />
         }
         right={
-          <ItemDetails data={people} image={image}>
+          <ItemDetails data={people} image={image} loading={loadingPeople}>
             <Details field="gender: " label={people?.gender} />
             <Details field="Birth Year: " label={people?.birth_year} />
           </ItemDetails>

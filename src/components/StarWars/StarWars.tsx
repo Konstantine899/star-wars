@@ -5,15 +5,23 @@ import RandomPlanetContainer from "../RandomPlanet/RandomPlanetContainer/RandomP
 import PeoplePage from "../pages/PeoplePage/PeoplePage";
 import PlanetsPage from "../pages/PlanetsPage/PlanetsPage";
 import StarshipsPage from "../pages/StarshipsPage/StarshipsPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import History from "../History/History";
 
 const StarWars: FC = () => {
   return (
     <>
-      <Header />
-      <RandomPlanetContainer />
-      <PeoplePage />
-      <PlanetsPage />
-      <StarshipsPage />
+      <BrowserRouter>
+        <Header />
+        <RandomPlanetContainer />
+
+        <Routes>
+          <Route path="/" element={<History />} />
+          <Route path="/people" element={<PeoplePage />} />
+          <Route path="/planets" element={<PlanetsPage />} />
+          <Route path="/starships" element={<StarshipsPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

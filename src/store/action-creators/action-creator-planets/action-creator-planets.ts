@@ -9,6 +9,8 @@ import {
 import { SwapiUrl } from "../enum/SwapiUrl";
 import { gettingData } from "../services/gettingData";
 import { extractId } from "../services/extractId";
+import { TPlanetHistoryAction } from "../../reducers/PlanetHistoryReducer/type/TPlanetHistoryAction";
+import { PlanetHistoryActionType } from "../../reducers/PlanetHistoryReducer/enum/PlanetHistoryActionType";
 
 function transformPlanet(body: IPlanetState) {
   return body.results.map((planet: IPlanet) => ({
@@ -38,5 +40,14 @@ export const getAllPlanets = () => {
         payload: "Error loading Planets",
       });
     }
+  };
+};
+
+export const planetHistoryPush = (planet: IPlanet) => {
+  return (dispatch: Dispatch<TPlanetHistoryAction>) => {
+    dispatch({
+      type: PlanetHistoryActionType.PLANET_HISTORY_PUSH,
+      payload: planet,
+    });
   };
 };

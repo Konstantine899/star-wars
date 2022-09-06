@@ -8,6 +8,8 @@ import { TStarshipAction } from "../../reducers/starshipReducer/types/TStarshipA
 import { StarshipsActionTypes } from "../../reducers/starshipReducer/enum/StarshipsActionTypes";
 import { gettingData } from "../services/gettingData";
 import { SwapiUrl } from "../enum/SwapiUrl";
+import { TStarshipHistoryAction } from "../../reducers/StarShipHistoryReducer/type/TStarshipHistoryAction";
+import { StarshipHistoryActionType } from "../../reducers/StarShipHistoryReducer/enum/StarshipHistoryActionType";
 
 function transformStarships(body: IStarshipState) {
   return body.results.map((starship: IStarship) => ({
@@ -35,5 +37,14 @@ export const getAllStarships = () => {
         payload: "Error loading Starships",
       });
     }
+  };
+};
+
+export const starshipHistoryPush = (starship: IStarship) => {
+  return (dispatch: Dispatch<TStarshipHistoryAction>) => {
+    dispatch({
+      type: StarshipHistoryActionType.STARSHIP_HISTORY_PUSH,
+      payload: starship,
+    });
   };
 };

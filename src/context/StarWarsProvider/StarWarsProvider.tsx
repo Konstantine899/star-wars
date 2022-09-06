@@ -6,6 +6,7 @@ import { StarWarsContext } from "../StarWarsContext";
 import { IPlanet } from "../../store/reducers/planetsReducer/initialState/interface/IPlanetState";
 import { IStarship } from "../../store/reducers/starshipReducer/initialState/interface/IStarshipState";
 import { ImagesUrl } from "../enum/ImagesUrl";
+import { useActions } from "../../store/hooks/useActions";
 
 export const StarWarsProvider = ({ children }: Ichildren) => {
   const [people, setPeople] = useState<IPeople | null>(null);
@@ -17,22 +18,43 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
   const loadingPeople = useTypedSelector((state) => state.people.loading);
   const loadingStarships = useTypedSelector((state) => state.starships.loading);
   const loadingPlanets = useTypedSelector((state) => state.planets.loading);
+  const peopleHistory = useTypedSelector(
+    (state) => state.peopleHistory.history
+  );
+  const planetHistory = useTypedSelector(
+    (state) => state.planetHistory.history
+  );
+  const starshipHistory = useTypedSelector(
+    (state) => state.starshipHistory.history
+  );
+
+  const { peopleHistoryPush, planetHistoryPush, starshipHistoryPush } =
+    useActions();
 
   const getPeople = (id: string) => {
     allPeople.filter((item) => {
-      if (item.id === id) return setPeople(item);
+      if (item.id === id) {
+        peopleHistoryPush(item);
+        return setPeople(item);
+      }
     });
   };
 
   const getPlanet = (id: string) => {
     allPlanets.filter((item) => {
-      if (item.id === id) return setPlanet(item);
+      if (item.id === id) {
+        planetHistoryPush(item);
+        return setPlanet(item);
+      }
     });
   };
 
   const getStarship = (id: string) => {
     allStarships.filter((item) => {
-      if (item.id === id) return setStarship(item);
+      if (item.id === id) {
+        starshipHistoryPush(item);
+        return setStarship(item);
+      }
     });
   };
 
@@ -66,6 +88,9 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         loadingPeople,
         loadingStarships,
         loadingPlanets,
+        peopleHistory,
+        planetHistory,
+        starshipHistory,
       }}
     >
       {children}

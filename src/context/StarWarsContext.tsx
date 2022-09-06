@@ -20,6 +20,9 @@ interface IStarWarsCreateContext {
   loadingPeople: boolean;
   loadingStarships: boolean;
   loadingPlanets: boolean;
+  peopleHistory: IPeople[];
+  planetHistory: IPlanet[];
+  starshipHistory: IStarship[];
 }
 
 export const StarWarsContext = createContext<IStarWarsCreateContext>(

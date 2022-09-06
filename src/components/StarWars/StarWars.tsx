@@ -6,7 +6,7 @@ import PeoplePage from "../pages/PeoplePage/PeoplePage";
 import PlanetsPage from "../pages/PlanetsPage/PlanetsPage";
 import StarshipsPage from "../pages/StarshipsPage/StarshipsPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import History from "../History/History";
+import HistoryPage from "../pages/HistoryPage/HistoryPage";
 
 const StarWars: FC = () => {
   return (
@@ -16,7 +16,7 @@ const StarWars: FC = () => {
         <RandomPlanetContainer />
 
         <Routes>
-          <Route path="/" element={<History />} />
+          <Route path="/" element={<HistoryPage />} />
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/planets" element={<PlanetsPage />} />
           <Route path="/starships" element={<StarshipsPage />} />

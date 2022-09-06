@@ -18,6 +18,9 @@ export const useStarWars = () => {
     loadingPeople,
     loadingStarships,
     loadingPlanets,
+    peopleHistory,
+    planetHistory,
+    starshipHistory,
   } = useContext(StarWarsContext);
   return {
     allPeople,
@@ -35,5 +38,8 @@ export const useStarWars = () => {
     loadingPeople,
     loadingStarships,
     loadingPlanets,
+    peopleHistory,
+    planetHistory,
+    starshipHistory,
   };
 };

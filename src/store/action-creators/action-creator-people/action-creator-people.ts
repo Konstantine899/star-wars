@@ -8,6 +8,8 @@ import { TPeopleAction } from "../../reducers/peopleReducer/types/TPeopleAction"
 import { PeopleActionTypes } from "../../reducers/peopleReducer/enum/PeopleActionTypes";
 import { gettingData } from "../services/gettingData";
 import { SwapiUrl } from "../enum/SwapiUrl";
+import { TPeopleHistoryAction } from "../../reducers/peopleHistoryReducer/type/TPeopleHistoryAction";
+import { PeopleHistoryActionType } from "../../reducers/peopleHistoryReducer/enum/PeopleHistoryActionType";
 
 function transformPeople(body: IPeopleState) {
   return body.results.map((people: IPeople) => ({
@@ -32,5 +34,14 @@ export const getAllPeople = () => {
         payload: "Error loading People",
       });
     }
+  };
+};
+
+export const peopleHistoryPush = (people: IPeople) => {
+  return (dispatch: Dispatch<TPeopleHistoryAction>) => {
+    dispatch({
+      type: PeopleHistoryActionType.PEOPLE_HISTORY_PUSH,
+      payload: people,
+    });
   };
 };

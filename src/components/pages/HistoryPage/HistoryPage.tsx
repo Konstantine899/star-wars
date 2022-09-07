@@ -18,11 +18,18 @@ const HistoryPage = () => {
   ));
 
   return (
-    <History>
-      <ItemHistory title="Person" data={people} />
-      <ItemHistory title="Planets" data={planet} />
-      <ItemHistory title="Starships" data={starship} />
-    </History>
+    <>
+      {" "}
+      {planet.length || starship.length || people.length ? (
+        <History>
+          <ItemHistory title="Person" data={people} />
+          <ItemHistory title="Planets" data={planet} />
+          <ItemHistory title="Starships" data={starship} />
+        </History>
+      ) : (
+        <h3>Пока что у вас нет истории просмотров</h3>
+      )}
+    </>
   );
 };
 

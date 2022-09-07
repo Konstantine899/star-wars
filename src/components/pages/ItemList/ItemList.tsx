@@ -24,7 +24,7 @@ const ItemList: FC<IItem> = ({ data, onItemSelected, allActions, loading }) => {
         <ul className="item-list">
           {data.map((item) => (
             <li
-              className="item-list-element-history"
+              className="item-list-element"
               key={item.name}
               onClick={() => onItemSelected(item.id)}
             >

@@ -1,0 +1,33 @@
+.history_is_empty {
+  margin: 0 0 100px 40px;
+}
+.history-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 0 100px 40px;
+}
+
+.history-page h2 {
+  margin-top: 50px;
+}
+
+.card-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #333333;
+  border-radius: 5%;
+}
+
+.card-history ul {
+  padding: 0;
+}
+
+.card-history ul li {
+  width: 40vw;
+  padding: 10px 20px;
+  list-style: none;
+}

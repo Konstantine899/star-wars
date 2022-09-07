@@ -7,14 +7,16 @@ interface IItemHistory {
 
 const ItemHistory: FC<IItemHistory> = ({ title, data }) => {
   return (
-    <div>
+    <>
       {data == false ? null : (
         <>
-          <h1>{title}</h1>
-          <ul>{data}</ul>
+          <h2>{title}</h2>
+          <div className="card-history">
+            <ul>{data}</ul>
+          </div>
         </>
       )}
-    </div>
+    </>
   );
 };
 

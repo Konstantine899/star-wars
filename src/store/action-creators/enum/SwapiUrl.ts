@@ -3,4 +3,5 @@ export enum SwapiUrl {
   PEOPLE_URL = `/people/`,
   STARSHIPS_URL = `/starships/`,
   PLANETS_URL = `/planets/`,
+  QUERY_URL = `?page=`,
 }

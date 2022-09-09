@@ -9,15 +9,29 @@ export const peopleReducer = (
 ): IPeopleState => {
   switch (action.type) {
     case PeopleActionTypes.FETCH_PEOPLE:
-      return { loading: true, error: null, results: [] };
+      return {
+        ...state,
+        loading: true,
+        results: [],
+      };
     case PeopleActionTypes.FETCH_PEOPLE_SUCCESS:
       return {
+        ...state,
         loading: false,
-        error: null,
+        peopleCount: action.peopleCount,
+        pages: action.pages,
+        currentPage: action.currentPage,
         results: action.payload,
       };
     case PeopleActionTypes.FETCH_PEOPLE_ERROR:
-      return { loading: false, error: action.payload, results: [] };
+      return {
+        ...state,
+        error: action.payload,
+        results: [],
+      };
+    case PeopleActionTypes.SET_PEOPLE_PAGE:
+      return { ...state, loading: true, results: [] };
+
     default:
       return state;
   }

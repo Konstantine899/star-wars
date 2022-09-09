@@ -5,11 +5,18 @@ import { useStarWars } from "../../../hooks/useStarWars";
 import { useActions } from "../../../store/hooks/useActions";
 import ItemDetails from "../ItemDetails/ItemDetails";
 import Details from "../ItemDetails/Details/Details";
+import Pagination from "../../Pagination/Pagination";
 
 const PeoplePage = () => {
   const [image, setImage] = useState("");
-  const { allPeople, getPeople, people, getPersonImage, loadingPeople } =
-    useStarWars();
+  const {
+    allPeople,
+    getPeople,
+    people,
+    getPersonImage,
+    loadingPeople,
+    peoplePages,
+  } = useStarWars();
 
   const { getAllPeople } = useActions();
 
@@ -20,6 +27,7 @@ const PeoplePage = () => {
 
   return (
     <>
+      <Pagination pages={peoplePages} />
       <Row
         left={
           <ItemList

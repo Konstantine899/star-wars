@@ -20,18 +20,75 @@ function transformPeople(body: IPeopleState) {
   }));
 }
 
+const peopleCountTransform = (body: any) => {
+  return body.count;
+};
+
 export const getAllPeople = () => {
   return async (dispatch: Dispatch<TPeopleAction>) => {
     try {
+      const peopleCount = peopleCountTransform(
+        await gettingData(`${SwapiUrl.PEOPLE_URL}`)
+      );
+      // подсчет количества страниц
+      const pageCount = Math.ceil(peopleCount / 10);
+      let pages: number[] = [];
+      for (let i = 0; i < pageCount; i++) {
+        pages.push(i + 1);
+      }
+
       dispatch({ type: PeopleActionTypes.FETCH_PEOPLE });
       dispatch({
         type: PeopleActionTypes.FETCH_PEOPLE_SUCCESS,
         payload: transformPeople(await gettingData(`${SwapiUrl.PEOPLE_URL}`)),
+        currentPage: 1,
+        pages,
+        peopleCount,
       });
     } catch (error) {
       dispatch({
         type: PeopleActionTypes.FETCH_PEOPLE_ERROR,
         payload: "Error loading People",
+        currentPage: 1,
+        pages: [],
+        peopleCount: 0,
+      });
+    }
+  };
+};
+
+export const getPeoplePage = (page: number) => {
+  return async (dispatch: Dispatch<TPeopleAction>) => {
+    const peopleCount = peopleCountTransform(
+      await gettingData(`${SwapiUrl.PEOPLE_URL}`)
+    );
+    // подсчет количества страниц
+    const pageCount = Math.ceil(peopleCount / 10);
+    let pages: number[] = [];
+    for (let i = 0; i < pageCount; i++) {
+      pages.push(i + 1);
+    }
+
+    try {
+      dispatch({ type: PeopleActionTypes.SET_PEOPLE_PAGE });
+      dispatch({
+        type: PeopleActionTypes.FETCH_PEOPLE_SUCCESS,
+        payload: transformPeople(
+          await gettingData(
+            `${SwapiUrl.PEOPLE_URL}${SwapiUrl.QUERY_URL}${page}`
+          )
+        ),
+        currentPage: page,
+        pages,
+        peopleCount,
+      });
+    } catch (e) {
+      dispatch({
+        type: PeopleActionTypes.FETCH_PEOPLE_ERROR,
+        payload: "Error loading People",
+        currentPage: 1,
+        pages: [],
+        peopleCount: 0,
       });
     }
   };

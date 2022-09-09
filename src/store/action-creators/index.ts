@@ -9,6 +9,7 @@ import {
 import {
   getAllPeople,
   peopleHistoryPush,
+  getPeoplePage,
 } from "./action-creator-people/action-creator-people";
 
 export {
@@ -18,4 +19,5 @@ export {
   peopleHistoryPush,
   planetHistoryPush,
   starshipHistoryPush,
+  getPeoplePage,
 };

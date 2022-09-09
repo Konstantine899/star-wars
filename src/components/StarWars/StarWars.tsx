@@ -16,10 +16,12 @@ const StarWars: FC = () => {
         <RandomPlanetContainer />
 
         <Routes>
-          <Route path="/people" element={<PeoplePage />} />
-          <Route path="/planets" element={<PlanetsPage />} />
-          <Route path="/starships" element={<StarshipsPage />} />
-          <Route path="/history" element={<HistoryPage />} />
+          <Route path="/people/*" element={<PeoplePage />}>
+            <Route path={`?page=`} element={<PeoplePage />} />
+          </Route>
+          <Route path="/planets/*" element={<PlanetsPage />} />
+          <Route path="/starships/*" element={<StarshipsPage />} />
+          <Route path="/history/*" element={<HistoryPage />} />
         </Routes>
       </BrowserRouter>
     </>

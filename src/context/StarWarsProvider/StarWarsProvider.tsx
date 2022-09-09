@@ -28,8 +28,14 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
     (state) => state.starshipHistory.history
   );
 
-  const { peopleHistoryPush, planetHistoryPush, starshipHistoryPush } =
-    useActions();
+  const peoplePages = useTypedSelector((state) => state.people.pages);
+
+  const {
+    peopleHistoryPush,
+    planetHistoryPush,
+    starshipHistoryPush,
+    getPeoplePage,
+  } = useActions();
 
   const getPeople = (id: string) => {
     allPeople.filter((item) => {
@@ -91,6 +97,8 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         peopleHistory,
         planetHistory,
         starshipHistory,
+        getPeoplePage,
+        peoplePages,
       }}
     >
       {children}

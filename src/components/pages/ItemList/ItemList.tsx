@@ -21,17 +21,19 @@ const ItemList: FC<IItem> = ({ data, onItemSelected, allActions, loading }) => {
       {loading ? (
         <Spinner />
       ) : (
-        <ul className="item-list">
-          {data.map((item) => (
-            <li
-              className="item-list-element"
-              key={item.name}
-              onClick={() => onItemSelected(item.id)}
-            >
-              {item.name}
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="item-list">
+            {data.map((item) => (
+              <li
+                className="item-list-element"
+                key={item.name}
+                onClick={() => onItemSelected(item.id)}
+              >
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </>
   );

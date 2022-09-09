@@ -6,9 +6,19 @@ export interface IFetchPeopleAction {
 }
 export interface IFetchPeopleSuccessActions {
   type: PeopleActionTypes.FETCH_PEOPLE_SUCCESS;
+  currentPage: number;
+  pages: number[];
+  peopleCount: number;
   payload: IPeople[];
 }
 export interface IFetchPeopleErrorAction {
   type: PeopleActionTypes.FETCH_PEOPLE_ERROR;
+  currentPage: number;
+  pages: number[];
+  peopleCount: number;
   payload: string;
+}
+
+export interface ISetPeoplePage {
+  type: PeopleActionTypes.SET_PEOPLE_PAGE;
 }

@@ -23,6 +23,8 @@ interface IStarWarsCreateContext {
   peopleHistory: IPeople[];
   planetHistory: IPlanet[];
   starshipHistory: IStarship[];
+  getPeoplePage: (page: number) => void;
+  peoplePages: number[];
 }
 
 export const StarWarsContext = createContext<IStarWarsCreateContext>(

@@ -1,6 +1,7 @@
 import {
   getAllPlanets,
   planetHistoryPush,
+  getPlanetPage,
 } from "./action-creator-planets/action-creator-planets";
 import {
   getAllStarships,
@@ -20,4 +21,5 @@ export {
   planetHistoryPush,
   starshipHistoryPush,
   getPeoplePage,
+  getPlanetPage,
 };

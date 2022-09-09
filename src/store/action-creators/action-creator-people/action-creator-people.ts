@@ -49,7 +49,7 @@ export const getAllPeople = () => {
       dispatch({
         type: PeopleActionTypes.FETCH_PEOPLE_ERROR,
         payload: "Error loading People",
-        currentPage: 1,
+
         pages: [],
         peopleCount: 0,
       });
@@ -78,7 +78,7 @@ export const getPeoplePage = (page: number) => {
             `${SwapiUrl.PEOPLE_URL}${SwapiUrl.QUERY_URL}${page}`
           )
         ),
-        currentPage: page,
+
         pages,
         peopleCount,
       });

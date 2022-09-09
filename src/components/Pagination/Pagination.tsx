@@ -1,13 +1,12 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { useStarWars } from "../../hooks/useStarWars";
 
 interface IPagination {
   pages: number[];
+  getPages: (page: number) => void;
 }
 
-const Pagination: FC<IPagination> = ({ pages }) => {
-  const { getPeoplePage } = useStarWars();
+const Pagination: FC<IPagination> = ({ pages, getPages }) => {
   return (
     <nav aria-label="Page navigation example">
       <ul className="pagination">
@@ -16,7 +15,7 @@ const Pagination: FC<IPagination> = ({ pages }) => {
             <Link
               className="page-link"
               to={`?page=${page}`}
-              onClick={() => getPeoplePage(page)}
+              onClick={() => getPages(page)}
             >
               {page}
             </Link>

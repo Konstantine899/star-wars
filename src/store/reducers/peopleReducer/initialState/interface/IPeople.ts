@@ -7,7 +7,6 @@ export interface IPeople {
 
 export interface IPeopleState {
   results: IPeople[];
-  currentPage: number;
   pages: number[];
   peopleCount: number;
   loading: boolean;

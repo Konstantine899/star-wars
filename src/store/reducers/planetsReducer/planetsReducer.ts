@@ -9,11 +9,20 @@ export const planetsReducer = (
 ): IPlanetState => {
   switch (action.type) {
     case PlanetActionTypes.FETCH_PLANET:
-      return { loading: true, error: null, results: [] };
+      return { ...state, loading: true, error: null, results: [] };
     case PlanetActionTypes.FETCH_PLANET_SUCCESS:
-      return { loading: false, error: null, results: action.payload };
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        planetsCount: action.planetsCount,
+        pages: action.pages,
+        results: action.payload,
+      };
     case PlanetActionTypes.FETCH_PLANET_ERROR:
-      return { loading: false, error: action.payload, results: [] };
+      return { ...state, loading: false, error: action.payload, results: [] };
+    case PlanetActionTypes.SET_PLANET_PAGE:
+      return { ...state, loading: true, results: [] };
     default:
       return state;
   }

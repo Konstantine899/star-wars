@@ -16,8 +16,8 @@ const PeoplePage = () => {
     getPersonImage,
     loadingPeople,
     peoplePages,
+    getPeoplePage,
   } = useStarWars();
-
   const { getAllPeople } = useActions();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const PeoplePage = () => {
 
   return (
     <>
-      <Pagination pages={peoplePages} />
+      <Pagination pages={peoplePages} getPages={getPeoplePage} />
       <Row
         left={
           <ItemList

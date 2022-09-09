@@ -29,12 +29,14 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
   );
 
   const peoplePages = useTypedSelector((state) => state.people.pages);
+  const planetPages = useTypedSelector((state) => state.planets.pages);
 
   const {
     peopleHistoryPush,
     planetHistoryPush,
     starshipHistoryPush,
     getPeoplePage,
+    getPlanetPage,
   } = useActions();
 
   const getPeople = (id: string) => {
@@ -99,6 +101,8 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         starshipHistory,
         getPeoplePage,
         peoplePages,
+        planetPages,
+        getPlanetPage,
       }}
     >
       {children}

@@ -23,6 +23,8 @@ export const useStarWars = () => {
     starshipHistory,
     getPeoplePage,
     peoplePages,
+    planetPages,
+    getPlanetPage,
   } = useContext(StarWarsContext);
   return {
     allPeople,
@@ -45,5 +47,7 @@ export const useStarWars = () => {
     starshipHistory,
     getPeoplePage,
     peoplePages,
+    planetPages,
+    getPlanetPage,
   };
 };

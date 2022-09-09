@@ -20,7 +20,6 @@ export const peopleReducer = (
         loading: false,
         peopleCount: action.peopleCount,
         pages: action.pages,
-        currentPage: action.currentPage,
         results: action.payload,
       };
     case PeopleActionTypes.FETCH_PEOPLE_ERROR:

@@ -14,4 +14,6 @@ export interface IPlanetState {
   results: IPlanet[];
   loading: boolean;
   error: null | string;
+  pages: number[];
+  planetsCount: number;
 }

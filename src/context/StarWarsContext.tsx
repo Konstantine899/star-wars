@@ -25,6 +25,8 @@ interface IStarWarsCreateContext {
   starshipHistory: IStarship[];
   getPeoplePage: (page: number) => void;
   peoplePages: number[];
+  planetPages: number[];
+  getPlanetPage: (page: number) => void;
 }
 
 export const StarWarsContext = createContext<IStarWarsCreateContext>(

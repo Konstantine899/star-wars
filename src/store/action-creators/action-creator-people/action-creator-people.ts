@@ -1,15 +1,15 @@
 import {
   IPeople,
   IPeopleState,
-} from "../../reducers/peopleReducer/initialState/interface/IPeople";
+} from "../../reducers/people/peopleReducer/initialState/interface/IPeople";
 import { extractId } from "../services/extractId";
 import { Dispatch } from "redux";
-import { TPeopleAction } from "../../reducers/peopleReducer/types/TPeopleAction";
-import { PeopleActionTypes } from "../../reducers/peopleReducer/enum/PeopleActionTypes";
+import { TPeopleAction } from "../../reducers/people/peopleReducer/types/TPeopleAction";
+import { PeopleActionTypes } from "../../reducers/people/peopleReducer/enum/PeopleActionTypes";
 import { gettingData } from "../services/gettingData";
 import { SwapiUrl } from "../enum/SwapiUrl";
-import { TPeopleHistoryAction } from "../../reducers/peopleHistoryReducer/type/TPeopleHistoryAction";
-import { PeopleHistoryActionType } from "../../reducers/peopleHistoryReducer/enum/PeopleHistoryActionType";
+import { TPeopleHistoryAction } from "../../reducers/people/peopleHistoryReducer/type/TPeopleHistoryAction";
+import { PeopleHistoryActionType } from "../../reducers/people/peopleHistoryReducer/enum/PeopleHistoryActionType";
 
 function transformPeople(body: IPeopleState) {
   return body.results.map((people: IPeople) => ({
@@ -41,7 +41,6 @@ export const getAllPeople = () => {
       dispatch({
         type: PeopleActionTypes.FETCH_PEOPLE_SUCCESS,
         payload: transformPeople(await gettingData(`${SwapiUrl.PEOPLE_URL}`)),
-        currentPage: 1,
         pages,
         peopleCount,
       });

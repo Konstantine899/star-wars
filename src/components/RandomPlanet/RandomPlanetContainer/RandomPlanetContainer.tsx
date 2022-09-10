@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../RandomPlanet.css";
 import { useActions } from "../../../store/hooks/useActions";
 import { useStarWars } from "../../../hooks/useStarWars";
-import { IPlanet } from "../../../store/reducers/planetsReducer/initialState/interface/IPlanetState";
+import { IPlanet } from "../../../store/reducers/planets/planetsReducer/initialState/interface/IPlanetState";
 import RandomPlanetDefault from "../RandomPlanetDefault/RandomPlanetDefault";
 import RandomPlanet from "../RandomPlanet";
 import { useInterval } from "../../../hooks/useInterval";
@@ -22,7 +22,7 @@ const RandomPlanetContainer = () => {
     allPlanets.filter((item) => {
       if (item.id === id) return setPlanet(item);
     });
-  }, 5000);
+  }, 3000);
 
   return (
     <>

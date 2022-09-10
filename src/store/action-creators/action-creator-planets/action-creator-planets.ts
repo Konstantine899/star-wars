@@ -1,16 +1,16 @@
 import { Dispatch } from "redux";
 
-import { TPlanetAction } from "../../reducers/planetsReducer/types/TPlanetAction";
-import { PlanetActionTypes } from "../../reducers/planetsReducer/enum/PlanetActionTypes";
+import { TPlanetAction } from "../../reducers/planets/planetsReducer/types/TPlanetAction";
+import { PlanetActionTypes } from "../../reducers/planets/planetsReducer/enum/PlanetActionTypes";
 import {
   IPlanet,
   IPlanetState,
-} from "../../reducers/planetsReducer/initialState/interface/IPlanetState";
+} from "../../reducers/planets/planetsReducer/initialState/interface/IPlanetState";
 import { SwapiUrl } from "../enum/SwapiUrl";
 import { gettingData } from "../services/gettingData";
 import { extractId } from "../services/extractId";
-import { TPlanetHistoryAction } from "../../reducers/PlanetHistoryReducer/type/TPlanetHistoryAction";
-import { PlanetHistoryActionType } from "../../reducers/PlanetHistoryReducer/enum/PlanetHistoryActionType";
+import { TPlanetHistoryAction } from "../../reducers/planets/PlanetHistoryReducer/type/TPlanetHistoryAction";
+import { PlanetHistoryActionType } from "../../reducers/planets/PlanetHistoryReducer/enum/PlanetHistoryActionType";
 
 function transformPlanet(body: IPlanetState) {
   return body.results.map((planet: IPlanet) => ({

@@ -6,6 +6,7 @@ import {
 import {
   getAllStarships,
   starshipHistoryPush,
+  getStarshipsPage,
 } from "./action-creator-starships/action-creator-starships";
 import {
   getAllPeople,
@@ -22,4 +23,5 @@ export {
   starshipHistoryPush,
   getPeoplePage,
   getPlanetPage,
+  getStarshipsPage,
 };

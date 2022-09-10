@@ -5,6 +5,7 @@ import { useStarWars } from "../../../hooks/useStarWars";
 import { useActions } from "../../../store/hooks/useActions";
 import ItemDetails from "../ItemDetails/ItemDetails";
 import Details from "../ItemDetails/Details/Details";
+import Pagination from "../../Pagination/Pagination";
 
 const StarshipsPage = () => {
   const [image, setImage] = useState("");
@@ -14,6 +15,8 @@ const StarshipsPage = () => {
     starship,
     getStarshipImage,
     loadingStarships,
+    starshipsPages,
+    getStarshipsPage,
   } = useStarWars();
   const { getAllStarships } = useActions();
 
@@ -23,26 +26,32 @@ const StarshipsPage = () => {
   }, [starship, getStarshipImage]);
 
   return (
-    <Row
-      left={
-        <ItemList
-          data={allStarships}
-          onItemSelected={getStarship}
-          allActions={getAllStarships}
-          loading={loadingStarships}
-        />
-      }
-      right={
-        <ItemDetails data={starship} image={image} loading={loadingStarships}>
-          <Details field="Model: " label={starship?.model} />
-          <Details field="Starship Class: " label={starship?.starship_class} />
-          <Details
-            field="Const in credits: "
-            label={starship?.cost_in_credits}
+    <>
+      <Pagination pages={starshipsPages} getPages={getStarshipsPage} />
+      <Row
+        left={
+          <ItemList
+            data={allStarships}
+            onItemSelected={getStarship}
+            allActions={getAllStarships}
+            loading={loadingStarships}
           />
-        </ItemDetails>
-      }
-    />
+        }
+        right={
+          <ItemDetails data={starship} image={image} loading={loadingStarships}>
+            <Details field="Model: " label={starship?.model} />
+            <Details
+              field="Starship Class: "
+              label={starship?.starship_class}
+            />
+            <Details
+              field="Const in credits: "
+              label={starship?.cost_in_credits}
+            />
+          </ItemDetails>
+        }
+      />
+    </>
   );
 };
 

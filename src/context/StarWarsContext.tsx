@@ -1,8 +1,8 @@
 import { createContext } from "react";
 
-import { IPeople } from "../store/reducers/peopleReducer/initialState/interface/IPeople";
-import { IStarship } from "../store/reducers/starshipReducer/initialState/interface/IStarshipState";
-import { IPlanet } from "../store/reducers/planetsReducer/initialState/interface/IPlanetState";
+import { IPeople } from "../store/reducers/people/peopleReducer/initialState/interface/IPeople";
+import { IStarship } from "../store/reducers/starships/starshipReducer/initialState/interface/IStarshipState";
+import { IPlanet } from "../store/reducers/planets/planetsReducer/initialState/interface/IPlanetState";
 
 interface IStarWarsCreateContext {
   allPeople: IPeople[];
@@ -23,10 +23,12 @@ interface IStarWarsCreateContext {
   peopleHistory: IPeople[];
   planetHistory: IPlanet[];
   starshipHistory: IStarship[];
-  getPeoplePage: (page: number) => void;
   peoplePages: number[];
   planetPages: number[];
+  starshipsPages: number[];
   getPlanetPage: (page: number) => void;
+  getPeoplePage: (page: number) => void;
+  getStarshipsPage: (page: number) => void;
 }
 
 export const StarWarsContext = createContext<IStarWarsCreateContext>(

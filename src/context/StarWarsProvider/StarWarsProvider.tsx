@@ -1,10 +1,10 @@
 import { Ichildren } from "../interface/Ichildren";
 import React, { useState } from "react";
-import { IPeople } from "../../store/reducers/peopleReducer/initialState/interface/IPeople";
+import { IPeople } from "../../store/reducers/people/peopleReducer/initialState/interface/IPeople";
 import { useTypedSelector } from "../../store/hooks/useTypedSelector";
 import { StarWarsContext } from "../StarWarsContext";
-import { IPlanet } from "../../store/reducers/planetsReducer/initialState/interface/IPlanetState";
-import { IStarship } from "../../store/reducers/starshipReducer/initialState/interface/IStarshipState";
+import { IPlanet } from "../../store/reducers/planets/planetsReducer/initialState/interface/IPlanetState";
+import { IStarship } from "../../store/reducers/starships/starshipReducer/initialState/interface/IStarshipState";
 import { ImagesUrl } from "../enum/ImagesUrl";
 import { useActions } from "../../store/hooks/useActions";
 
@@ -30,6 +30,7 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
 
   const peoplePages = useTypedSelector((state) => state.people.pages);
   const planetPages = useTypedSelector((state) => state.planets.pages);
+  const starshipsPages = useTypedSelector((state) => state.starships.pages);
 
   const {
     peopleHistoryPush,
@@ -37,6 +38,7 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
     starshipHistoryPush,
     getPeoplePage,
     getPlanetPage,
+    getStarshipsPage,
   } = useActions();
 
   const getPeople = (id: string) => {
@@ -103,6 +105,8 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         peoplePages,
         planetPages,
         getPlanetPage,
+        starshipsPages,
+        getStarshipsPage,
       }}
     >
       {children}

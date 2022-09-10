@@ -8,9 +8,15 @@ export interface IFetchStarshipAction {
 export interface IFetchStarshipSuccessAction {
   type: StarshipsActionTypes.FETCH_STARSHIPS_SUCCESS;
   payload: IStarship[];
+  pages: number[];
+  starshipsCount: number;
 }
 
 export interface IFetchStarshipErrorAction {
   type: StarshipsActionTypes.FETCH_STARSHIPS_ERROR;
   payload: string;
+}
+
+export interface ISetStarshipPage {
+  type: StarshipsActionTypes.SET_STARSHIP_PAGE;
 }

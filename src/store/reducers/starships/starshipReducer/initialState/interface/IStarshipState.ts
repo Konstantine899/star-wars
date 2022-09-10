@@ -10,4 +10,6 @@ export interface IStarshipState {
   results: IStarship[];
   loading: boolean;
   error: null | string;
+  pages: number[];
+  starshipsCount: number;
 }

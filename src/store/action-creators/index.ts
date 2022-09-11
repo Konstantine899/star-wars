@@ -8,6 +8,7 @@ import {
   getAllStarships,
   starshipHistoryPush,
   getStarshipsPage,
+  getStarshipImage,
 } from "./action-creator-starships/action-creator-starships";
 import {
   getAllPeople,
@@ -28,4 +29,5 @@ export {
   getStarshipsPage,
   getPeopleImage,
   getPlanetImage,
+  getStarshipImage,
 };

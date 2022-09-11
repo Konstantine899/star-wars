@@ -15,13 +15,15 @@ const StarshipsPage = () => {
     loadingStarships,
     starshipsPages,
     getStarshipsPage,
+    getStarshipImage,
+    starshipImage,
   } = useStarWars();
   const { getAllStarships } = useActions();
 
   useEffect(() => {
     if (starship === null) return;
-    //starship.id
-  }, [starship]);
+    getStarshipImage(starship.id);
+  }, [starship, getStarshipImage]);
 
   return (
     <>
@@ -36,7 +38,11 @@ const StarshipsPage = () => {
           />
         }
         right={
-          <ItemDetails data={starship} image={""} loading={loadingStarships}>
+          <ItemDetails
+            data={starship}
+            image={starshipImage}
+            loading={loadingStarships}
+          >
             <Details field="Model: " label={starship?.model} />
             <Details
               field="Starship Class: "

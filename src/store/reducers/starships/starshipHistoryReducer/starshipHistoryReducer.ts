@@ -5,7 +5,7 @@ import {
 import { TStarshipHistoryAction } from "./type/TStarshipHistoryAction";
 import { StarshipHistoryActionType } from "./enum/StarshipHistoryActionType";
 
-export const StarShipHistoryReducer = (
+export const StarshipHistoryReducer = (
   state = StarShipHistoryState,
   action: TStarshipHistoryAction
 ): IStarShipHistoryState => {

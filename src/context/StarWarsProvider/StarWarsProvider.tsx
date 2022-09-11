@@ -33,6 +33,7 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
 
   const peopleImage = useTypedSelector((state) => state.peopleImage.image);
   const planetImage = useTypedSelector((state) => state.planetImage.image);
+  const starshipImage = useTypedSelector((state) => state.starshipImage.image);
 
   const {
     peopleHistoryPush,
@@ -43,6 +44,7 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
     getStarshipsPage,
     getPeopleImage,
     getPlanetImage,
+    getStarshipImage,
   } = useActions();
 
   const getPeople = (id: string) => {
@@ -100,6 +102,8 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         getPeopleImage,
         planetImage,
         getPlanetImage,
+        starshipImage,
+        getStarshipImage,
       }}
     >
       {children}

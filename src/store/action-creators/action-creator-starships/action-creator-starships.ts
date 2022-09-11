@@ -8,8 +8,14 @@ import { TStarshipAction } from "../../reducers/starships/starshipReducer/types/
 import { StarshipsActionTypes } from "../../reducers/starships/starshipReducer/enum/StarshipsActionTypes";
 import { gettingData } from "../services/gettingData";
 import { SwapiUrl } from "../enum/SwapiUrl";
-import { TStarshipHistoryAction } from "../../reducers/starships/StarShipHistoryReducer/type/TStarshipHistoryAction";
-import { StarshipHistoryActionType } from "../../reducers/starships/StarShipHistoryReducer/enum/StarshipHistoryActionType";
+import { TStarshipHistoryAction } from "../../reducers/starships/starshipHistoryReducer/type/TStarshipHistoryAction";
+import { StarshipHistoryActionType } from "../../reducers/starships/starshipHistoryReducer/enum/StarshipHistoryActionType";
+import { fetchImage } from "../services/fetchImage";
+import { ImagesUrl } from "../enum/ImagesUrl";
+import { fetchImageStatus } from "../services/fetchImageStatus";
+import NoPictute from "../image/no_picture.jpg";
+import { TStarshipImageAction } from "../../reducers/starships/starshipImageReducer/type/TStarshipImageAction/TStarshipImageAction";
+import { StarshipImageTypes } from "../../reducers/starships/starshipImageReducer/enum/StarshipImageTypes";
 
 function transformStarships(body: IStarshipState) {
   return body.results.map((starship: IStarship) => ({
@@ -82,6 +88,31 @@ export const getStarshipsPage = (page: number) => {
       dispatch({
         type: StarshipsActionTypes.FETCH_STARSHIPS_ERROR,
         payload: "Error loading Starships",
+      });
+    }
+  };
+};
+
+export const getStarshipImage = (id: string) => {
+  return async (dispatch: Dispatch<TStarshipImageAction>) => {
+    try {
+      const image = await fetchImage(
+        `${ImagesUrl.BASE_IMAGE_URL}${ImagesUrl.STARSHIPS_IMAGE_URL}${id}${ImagesUrl.JPG}`
+      );
+
+      const status = await fetchImageStatus(
+        `${ImagesUrl.BASE_IMAGE_URL}${ImagesUrl.STARSHIPS_IMAGE_URL}${id}${ImagesUrl.JPG}`
+      );
+
+      dispatch({ type: StarshipImageTypes.FETCH_STARSHIP_IMAGE });
+      dispatch({
+        type: StarshipImageTypes.FETCH_STARSHIP_IMAGE_SUCCESS,
+        image: `${status === 200 ? image : NoPictute}`,
+      });
+    } catch (error) {
+      dispatch({
+        type: StarshipImageTypes.FETCH_STARSHIP_IMAGE_ERROR,
+        error: "NO PICTURE",
       });
     }
   };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Row from "../Row/Row";
 import ItemList from "../ItemList/ItemList";
 import { useStarWars } from "../../../hooks/useStarWars";
@@ -8,12 +8,10 @@ import Details from "../ItemDetails/Details/Details";
 import Pagination from "../../Pagination/Pagination";
 
 const StarshipsPage = () => {
-  const [image, setImage] = useState("");
   const {
     allStarships,
     getStarship,
     starship,
-    getStarshipImage,
     loadingStarships,
     starshipsPages,
     getStarshipsPage,
@@ -22,8 +20,8 @@ const StarshipsPage = () => {
 
   useEffect(() => {
     if (starship === null) return;
-    setImage(getStarshipImage(starship.id));
-  }, [starship, getStarshipImage]);
+    //starship.id
+  }, [starship]);
 
   return (
     <>
@@ -38,7 +36,7 @@ const StarshipsPage = () => {
           />
         }
         right={
-          <ItemDetails data={starship} image={image} loading={loadingStarships}>
+          <ItemDetails data={starship} image={""} loading={loadingStarships}>
             <Details field="Model: " label={starship?.model} />
             <Details
               field="Starship Class: "

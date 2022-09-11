@@ -10,6 +10,12 @@ import { gettingData } from "../services/gettingData";
 import { SwapiUrl } from "../enum/SwapiUrl";
 import { TPeopleHistoryAction } from "../../reducers/people/peopleHistoryReducer/type/TPeopleHistoryAction";
 import { PeopleHistoryActionType } from "../../reducers/people/peopleHistoryReducer/enum/PeopleHistoryActionType";
+import { TPeopleImageAction } from "../../reducers/people/peopleImageReducer/type/TPeopleImageAction";
+import { PeopleImageTypes } from "../../reducers/people/peopleImageReducer/enum/PeopleImageTypes";
+import NoPictute from "../image/no_picture.jpg";
+import { ImagesUrl } from "../enum/ImagesUrl";
+import { fetchImage } from "../services/fetchImage";
+import { fetchImageStatus } from "../services/fetchImageStatus";
 
 function transformPeople(body: IPeopleState) {
   return body.results.map((people: IPeople) => ({
@@ -88,6 +94,31 @@ export const getPeoplePage = (page: number) => {
         currentPage: 1,
         pages: [],
         peopleCount: 0,
+      });
+    }
+  };
+};
+
+export const getPeopleImage = (id: string) => {
+  return async (dispatch: Dispatch<TPeopleImageAction>) => {
+    try {
+      const image = await fetchImage(
+        `${ImagesUrl.BASE_IMAGE_URL}${ImagesUrl.CHARASTERS_IMAGE_URL}${id}${ImagesUrl.JPG}`
+      );
+
+      const status = await fetchImageStatus(
+        `${ImagesUrl.BASE_IMAGE_URL}${ImagesUrl.CHARASTERS_IMAGE_URL}${id}${ImagesUrl.JPG}`
+      );
+
+      dispatch({ type: PeopleImageTypes.FETCH_PEOPLE_IMAGE });
+      dispatch({
+        type: PeopleImageTypes.FETCH_PEOPLE_IMAGE_SUCCESS,
+        image: `${status === 404 ? NoPictute : image}`,
+      });
+    } catch (error) {
+      dispatch({
+        type: PeopleImageTypes.FETCH_PEOPLE_IMAGE_ERROR,
+        error: "NO PICTURE",
       });
     }
   };

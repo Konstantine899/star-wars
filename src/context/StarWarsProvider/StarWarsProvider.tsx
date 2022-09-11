@@ -5,7 +5,6 @@ import { useTypedSelector } from "../../store/hooks/useTypedSelector";
 import { StarWarsContext } from "../StarWarsContext";
 import { IPlanet } from "../../store/reducers/planets/planetsReducer/initialState/interface/IPlanetState";
 import { IStarship } from "../../store/reducers/starships/starshipReducer/initialState/interface/IStarshipState";
-import { ImagesUrl } from "../enum/ImagesUrl";
 import { useActions } from "../../store/hooks/useActions";
 
 export const StarWarsProvider = ({ children }: Ichildren) => {
@@ -32,6 +31,9 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
   const planetPages = useTypedSelector((state) => state.planets.pages);
   const starshipsPages = useTypedSelector((state) => state.starships.pages);
 
+  const peopleImage = useTypedSelector((state) => state.peopleImage.image);
+  const planetImage = useTypedSelector((state) => state.planetImage.image);
+
   const {
     peopleHistoryPush,
     planetHistoryPush,
@@ -39,6 +41,8 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
     getPeoplePage,
     getPlanetPage,
     getStarshipsPage,
+    getPeopleImage,
+    getPlanetImage,
   } = useActions();
 
   const getPeople = (id: string) => {
@@ -68,18 +72,6 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
     });
   };
 
-  const getPersonImage = (id: string) => {
-    return `${ImagesUrl.BASE_URL}${ImagesUrl.CHARASTERS_URL}${id}${ImagesUrl.JPG}`;
-  };
-
-  const getPlanetImage = (id: string) => {
-    return `${ImagesUrl.BASE_URL}${ImagesUrl.PLANETS_URL}${id}${ImagesUrl.JPG}`;
-  };
-
-  const getStarshipImage = (id: string) => {
-    return `${ImagesUrl.BASE_URL}${ImagesUrl.STARSHIPS_URL}${id}${ImagesUrl.JPG}`;
-  };
-
   return (
     <StarWarsContext.Provider
       value={{
@@ -92,9 +84,6 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         people,
         planet,
         starship,
-        getPersonImage,
-        getPlanetImage,
-        getStarshipImage,
         loadingPeople,
         loadingStarships,
         loadingPlanets,
@@ -107,6 +96,10 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         getPlanetPage,
         starshipsPages,
         getStarshipsPage,
+        peopleImage,
+        getPeopleImage,
+        planetImage,
+        getPlanetImage,
       }}
     >
       {children}

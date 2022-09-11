@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Row from "../Row/Row";
 import ItemList from "../ItemList/ItemList";
 import { useStarWars } from "../../../hooks/useStarWars";
@@ -8,22 +8,22 @@ import Details from "../ItemDetails/Details/Details";
 import Pagination from "../../Pagination/Pagination";
 
 const PeoplePage = () => {
-  const [image, setImage] = useState("");
   const {
     allPeople,
     getPeople,
     people,
-    getPersonImage,
     loadingPeople,
     peoplePages,
     getPeoplePage,
+    peopleImage,
+    getPeopleImage,
   } = useStarWars();
   const { getAllPeople } = useActions();
 
   useEffect(() => {
     if (people === null) return;
-    setImage(getPersonImage(people.id));
-  }, [people, getPersonImage]);
+    getPeopleImage(people.id);
+  }, [people, getPeopleImage]);
 
   return (
     <>
@@ -38,7 +38,11 @@ const PeoplePage = () => {
           />
         }
         right={
-          <ItemDetails data={people} image={image} loading={loadingPeople}>
+          <ItemDetails
+            data={people}
+            image={peopleImage}
+            loading={loadingPeople}
+          >
             <Details field="gender: " label={people?.gender} />
             <Details field="Birth Year: " label={people?.birth_year} />
           </ItemDetails>

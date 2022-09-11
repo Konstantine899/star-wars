@@ -11,6 +11,12 @@ import { gettingData } from "../services/gettingData";
 import { extractId } from "../services/extractId";
 import { TPlanetHistoryAction } from "../../reducers/planets/PlanetHistoryReducer/type/TPlanetHistoryAction";
 import { PlanetHistoryActionType } from "../../reducers/planets/PlanetHistoryReducer/enum/PlanetHistoryActionType";
+import NoPictute from "../image/no_picture.jpg";
+import { TPlanetImageAction } from "../../reducers/planets/planetImageReducer/type/TPlanetImageAction";
+import { PlanetImageTypes } from "../../reducers/planets/planetImageReducer/enum/PlanetImageTypes";
+import { ImagesUrl } from "../enum/ImagesUrl";
+import { fetchImage } from "../services/fetchImage";
+import { fetchImageStatus } from "../services/fetchImageStatus";
 
 function transformPlanet(body: IPlanetState) {
   return body.results.map((planet: IPlanet) => ({
@@ -87,6 +93,31 @@ export const getPlanetPage = (page: number) => {
       dispatch({
         type: PlanetActionTypes.FETCH_PLANET_ERROR,
         payload: "Error loading Planets",
+      });
+    }
+  };
+};
+
+export const getPlanetImage = (id: string) => {
+  return async (dispatch: Dispatch<TPlanetImageAction>) => {
+    try {
+      const image = await fetchImage(
+        `${ImagesUrl.BASE_IMAGE_URL}${ImagesUrl.PLANETS_IMAGE_URL}${id}${ImagesUrl.JPG}`
+      );
+
+      const status = await fetchImageStatus(
+        `${ImagesUrl.BASE_IMAGE_URL}${ImagesUrl.PLANETS_IMAGE_URL}${id}${ImagesUrl.JPG}`
+      );
+
+      dispatch({ type: PlanetImageTypes.FETCH_PLANET_IMAGE });
+      dispatch({
+        type: PlanetImageTypes.FETCH_PLANET_IMAGE_SUCCESS,
+        image: `${status === 200 ? image : NoPictute}`,
+      });
+    } catch (error) {
+      dispatch({
+        type: PlanetImageTypes.FETCH_PLANET_IMAGE_ERROR,
+        error: "NO PICTURE",
       });
     }
   };

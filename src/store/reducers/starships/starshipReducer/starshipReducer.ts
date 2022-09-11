@@ -18,8 +18,6 @@ export const starshipReducer = (
         starshipsCount: 0,
       };
     case StarshipsActionTypes.FETCH_STARSHIPS_SUCCESS:
-      console.log(action.pages);
-      console.log(action.starshipsCount);
       return {
         ...state,
         loading: false,

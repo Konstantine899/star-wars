@@ -2,6 +2,7 @@ import {
   getAllPlanets,
   planetHistoryPush,
   getPlanetPage,
+  getPlanetImage,
 } from "./action-creator-planets/action-creator-planets";
 import {
   getAllStarships,
@@ -12,6 +13,7 @@ import {
   getAllPeople,
   peopleHistoryPush,
   getPeoplePage,
+  getPeopleImage,
 } from "./action-creator-people/action-creator-people";
 
 export {
@@ -24,4 +26,6 @@ export {
   getPeoplePage,
   getPlanetPage,
   getStarshipsPage,
+  getPeopleImage,
+  getPlanetImage,
 };

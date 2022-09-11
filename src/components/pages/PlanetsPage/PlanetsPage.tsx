@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Row from "../Row/Row";
 import ItemList from "../ItemList/ItemList";
 import { useStarWars } from "../../../hooks/useStarWars";
@@ -8,22 +8,21 @@ import Details from "../ItemDetails/Details/Details";
 import Pagination from "../../Pagination/Pagination";
 
 const PlanetsPage = () => {
-  const [image, setImage] = useState("");
-
   const {
     allPlanets,
     getPlanet,
     planet,
-    getPlanetImage,
     loadingPlanets,
     planetPages,
     getPlanetPage,
+    planetImage,
+    getPlanetImage,
   } = useStarWars();
   const { getAllPlanets } = useActions();
 
   useEffect(() => {
     if (planet === null) return;
-    setImage(getPlanetImage(planet.id));
+    getPlanetImage(planet.id);
   }, [planet, getPlanetImage]);
 
   return (
@@ -39,7 +38,11 @@ const PlanetsPage = () => {
           />
         }
         right={
-          <ItemDetails data={planet} image={image} loading={loadingPlanets}>
+          <ItemDetails
+            data={planet}
+            image={planetImage}
+            loading={loadingPlanets}
+          >
             <Details field="Diameter: " label={planet?.diameter} />
             <Details
               field="Rotation Period: "

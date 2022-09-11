@@ -14,9 +14,6 @@ interface IStarWarsCreateContext {
   people: IPeople | null;
   planet: IPlanet | null;
   starship: IStarship | null;
-  getPersonImage: (id: string) => string;
-  getPlanetImage: (id: string) => string;
-  getStarshipImage: (id: string) => string;
   loadingPeople: boolean;
   loadingStarships: boolean;
   loadingPlanets: boolean;
@@ -29,6 +26,10 @@ interface IStarWarsCreateContext {
   getPlanetPage: (page: number) => void;
   getPeoplePage: (page: number) => void;
   getStarshipsPage: (page: number) => void;
+  peopleImage: string;
+  getPeopleImage: (id: string) => void;
+  planetImage: string;
+  getPlanetImage: (id: string) => void;
 }
 
 export const StarWarsContext = createContext<IStarWarsCreateContext>(

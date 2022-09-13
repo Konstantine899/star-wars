@@ -15,6 +15,7 @@ import {
   peopleHistoryPush,
   getPeoplePage,
   getPeopleImage,
+  searchPeople,
 } from "./action-creator-people/action-creator-people";
 
 export {
@@ -30,4 +31,5 @@ export {
   getPeopleImage,
   getPlanetImage,
   getStarshipImage,
+  searchPeople,
 };

@@ -28,9 +28,12 @@ export const peopleReducer = (
         error: action.payload,
         results: [],
       };
+
+    case PeopleActionTypes.SEARCH_PEOPLE:
+      return { ...state, loading: false, results: action.results };
+
     case PeopleActionTypes.SET_PEOPLE_PAGE:
       return { ...state, loading: true, results: [] };
-
     default:
       return state;
   }

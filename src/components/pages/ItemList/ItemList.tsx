@@ -16,6 +16,7 @@ const ItemList: FC<IItem> = ({ data, onItemSelected, allActions, loading }) => {
   useEffect(() => {
     allActions();
   }, []);
+
   return (
     <>
       {loading ? (

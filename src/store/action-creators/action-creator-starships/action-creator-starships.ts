@@ -78,7 +78,7 @@ export const getStarshipsPage = (page: number) => {
         type: StarshipsActionTypes.FETCH_STARSHIPS_SUCCESS,
         payload: transformStarships(
           await gettingData(
-            `${SwapiUrl.STARSHIPS_URL}${SwapiUrl.QUERY_URL}${page}`
+            `${SwapiUrl.STARSHIPS_URL}${SwapiUrl.QUERY_PAGE_URL}${page}`
           )
         ),
         pages,

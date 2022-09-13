@@ -83,7 +83,7 @@ export const getPlanetPage = (page: number) => {
         type: PlanetActionTypes.FETCH_PLANET_SUCCESS,
         payload: transformPlanet(
           await gettingData(
-            `${SwapiUrl.PLANETS_URL}${SwapiUrl.QUERY_URL}${page}`
+            `${SwapiUrl.PLANETS_URL}${SwapiUrl.QUERY_PAGE_URL}${page}`
           )
         ),
         planetsCount,

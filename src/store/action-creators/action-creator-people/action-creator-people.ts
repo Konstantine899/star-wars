@@ -80,7 +80,7 @@ export const getPeoplePage = (page: number) => {
         type: PeopleActionTypes.FETCH_PEOPLE_SUCCESS,
         payload: transformPeople(
           await gettingData(
-            `${SwapiUrl.PEOPLE_URL}${SwapiUrl.QUERY_URL}${page}`
+            `${SwapiUrl.PEOPLE_URL}${SwapiUrl.QUERY_PAGE_URL}${page}`
           )
         ),
 
@@ -121,6 +121,16 @@ export const getPeopleImage = (id: string) => {
         error: "NO PICTURE",
       });
     }
+  };
+};
+
+export const searchPeople = (query: string) => {
+  return async (dispatch: Dispatch<TPeopleAction>) => {
+    const response = await fetch(
+      `${SwapiUrl.BASE_URL}${SwapiUrl.PEOPLE_URL}${SwapiUrl.QUERY_SEARCH_URL}${query}`
+    );
+    const data = transformPeople(await response.json());
+    dispatch({ type: PeopleActionTypes.SEARCH_PEOPLE, results: data });
   };
 };
 

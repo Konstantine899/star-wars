@@ -1,0 +1,10 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 10px 0 20px 20px;
+}
+
+.search-people {
+  margin: 10px 0 20px 20px;
+}

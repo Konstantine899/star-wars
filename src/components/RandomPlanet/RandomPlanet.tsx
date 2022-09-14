@@ -1,19 +1,18 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { IPlanet } from "../../store/reducers/planets/planetsReducer/initialState/interface/IPlanetState";
-import { useStarWars } from "../../hooks/useStarWars";
 
 interface IProps {
   planet: IPlanet;
 }
 
 const RandomPlanet: FC<IProps> = ({ planet }) => {
-  const { getPlanetImage, planetImage } = useStarWars();
-  useEffect(() => {
-    getPlanetImage(planet.id);
-  }, [planetImage, planet]);
   return (
     <div className="random-planet jumbotron rounded">
-      <img className="planet-image" src={planetImage} alt="" />
+      <img
+        className="planet-image"
+        src={`https://starwars-visualguide.com/assets/img/planets/${planet.id}.jpg`}
+        alt=""
+      />
       <div>
         <h4>{planet.name}</h4>
         <ul className="random-planet">

@@ -30,7 +30,7 @@ export const peopleReducer = (
       };
 
     case PeopleActionTypes.SEARCH_PEOPLE:
-      return { ...state, loading: false, results: action.results };
+      return { ...state, results: action.results };
 
     case PeopleActionTypes.SET_PEOPLE_PAGE:
       return { ...state, loading: true, results: [] };

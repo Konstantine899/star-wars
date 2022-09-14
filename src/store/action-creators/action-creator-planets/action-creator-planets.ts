@@ -123,6 +123,16 @@ export const getPlanetImage = (id: string) => {
   };
 };
 
+export const searchPlanet = (query: string) => {
+  return async (dispatch: Dispatch<TPlanetAction>) => {
+    const response = await fetch(
+      `${SwapiUrl.BASE_URL}${SwapiUrl.PLANETS_URL}${SwapiUrl.QUERY_SEARCH_URL}${query}`
+    );
+    const data = transformPlanet(await response.json());
+    dispatch({ type: PlanetActionTypes.SEARCH_PLANET, results: data });
+  };
+};
+
 export const planetHistoryPush = (planet: IPlanet) => {
   return (dispatch: Dispatch<TPlanetHistoryAction>) => {
     dispatch({

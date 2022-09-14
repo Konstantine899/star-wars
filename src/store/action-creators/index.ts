@@ -3,6 +3,7 @@ import {
   planetHistoryPush,
   getPlanetPage,
   getPlanetImage,
+  searchPlanet,
 } from "./action-creator-planets/action-creator-planets";
 import {
   getAllStarships,
@@ -32,4 +33,5 @@ export {
   getPlanetImage,
   getStarshipImage,
   searchPeople,
+  searchPlanet,
 };

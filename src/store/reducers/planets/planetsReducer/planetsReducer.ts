@@ -21,6 +21,8 @@ export const planetsReducer = (
       };
     case PlanetActionTypes.FETCH_PLANET_ERROR:
       return { ...state, loading: false, error: action.payload, results: [] };
+    case PlanetActionTypes.SEARCH_PLANET:
+      return { ...state, results: action.results };
     case PlanetActionTypes.SET_PLANET_PAGE:
       return { ...state, loading: true, results: [] };
     default:

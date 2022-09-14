@@ -20,3 +20,8 @@ export interface IFetchPlanetErrorAction {
 export interface ISetPlanetPage {
   type: PlanetActionTypes.SET_PLANET_PAGE;
 }
+
+export interface ISearchPlanet {
+  type: PlanetActionTypes.SEARCH_PLANET;
+  results: IPlanet[];
+}

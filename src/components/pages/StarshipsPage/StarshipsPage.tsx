@@ -27,7 +27,10 @@ const StarshipsPage = () => {
 
   return (
     <>
-      <Pagination pages={starshipsPages} getPages={getStarshipsPage} />
+      <Row
+        left={<Pagination pages={starshipsPages} getPages={getStarshipsPage} />}
+        right={<></>}
+      />
       <Row
         left={
           <ItemList

@@ -5,14 +5,19 @@ import { IStarship } from "../../../store/reducers/starships/starshipReducer/ini
 import "./ItemList.css";
 import Spinner from "../../Spinner/Spinner";
 
-interface IItem {
+interface IProps {
   data: IPeople[] | IPlanet[] | IStarship[];
   onItemSelected: (id: string) => void;
   allActions: () => void;
   loading: boolean;
 }
 
-const ItemList: FC<IItem> = ({ data, onItemSelected, allActions, loading }) => {
+const ItemList: FC<IProps> = ({
+  data,
+  onItemSelected,
+  allActions,
+  loading,
+}) => {
   useEffect(() => {
     allActions();
   }, []);

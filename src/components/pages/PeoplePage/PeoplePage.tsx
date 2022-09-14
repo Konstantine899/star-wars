@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import Row from "../Row/Row";
 import ItemList from "../ItemList/ItemList";
 import { useStarWars } from "../../../hooks/useStarWars";
@@ -7,7 +7,7 @@ import ItemDetails from "../ItemDetails/ItemDetails";
 import Details from "../ItemDetails/Details/Details";
 import Pagination from "../../Pagination/Pagination";
 
-const PeoplePage = () => {
+const PeoplePage: FC = () => {
   const {
     allPeople,
     getPeople,

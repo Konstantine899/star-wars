@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 
-interface IItemHistory {
+interface IProps {
   title: string;
   data: React.ReactNode;
 }
 
-const ItemHistory: FC<IItemHistory> = ({ title, data }) => {
+const ItemHistory: FC<IProps> = ({ title, data }) => {
   return (
     <>
       {data == false ? null : (

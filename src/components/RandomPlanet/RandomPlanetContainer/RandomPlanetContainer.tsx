@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import "../RandomPlanet.css";
 import { useActions } from "../../../store/hooks/useActions";
 import { useStarWars } from "../../../hooks/useStarWars";
@@ -7,7 +7,7 @@ import RandomPlanetDefault from "../RandomPlanetDefault/RandomPlanetDefault";
 import RandomPlanet from "../RandomPlanet";
 import { useInterval } from "../../../hooks/useInterval";
 
-const RandomPlanetContainer = () => {
+const RandomPlanetContainer: FC = () => {
   const [planet, setPlanet] = useState<IPlanet | null>(null);
 
   const { getAllPlanets } = useActions();

@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 
-interface IHistory {
+interface IProps {
   children: JSX.Element | JSX.Element[];
 }
 
-const History: FC<IHistory> = ({ children }) => {
+const History: FC<IProps> = ({ children }) => {
   return <>{children}</>;
 };
 

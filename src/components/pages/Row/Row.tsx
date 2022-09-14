@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import "./Row.css";
-interface IRow {
+interface IProps {
   left: JSX.Element | JSX.Element[];
   right: JSX.Element | JSX.Element[];
 }
 
-const Row: FC<IRow> = ({ left, right }) => {
+const Row: FC<IProps> = ({ left, right }) => {
   return (
     <div className="detailed-information">
       <div className="col-md-6">{left}</div>

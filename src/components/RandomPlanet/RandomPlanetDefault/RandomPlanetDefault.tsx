@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const RandomPlanetDefault = () => {
+const RandomPlanetDefault: FC = () => {
   return (
     <div className="random-planet jumbotron rounded">
       <img

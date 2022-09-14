@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 
-interface IDetails {
+interface IProps {
   field: string;
   label?: string;
 }
 
-const Details: FC<IDetails> = ({ field, label }) => {
+const Details: FC<IProps> = ({ field, label }) => {
   return (
     <li className="list-group-item">
       <span>{field}</span>

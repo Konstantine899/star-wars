@@ -2,12 +2,12 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import "./Pagination.css";
 
-interface IPagination {
+interface IProps {
   pages: number[];
   getPages: (page: number) => void;
 }
 
-const Pagination: FC<IPagination> = ({ pages, getPages }) => {
+const Pagination: FC<IProps> = ({ pages, getPages }) => {
   return (
     <nav aria-label="Page navigation example">
       <ul className="pagination">

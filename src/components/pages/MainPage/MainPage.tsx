@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import "./Main.css";
 
-const MainPage = () => {
+const MainPage: FC = () => {
   return (
     <div className="main-content">
       <div className="description">

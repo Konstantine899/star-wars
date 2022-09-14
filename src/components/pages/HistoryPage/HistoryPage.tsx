@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import History from "./History/History";
 import ItemHistory from "./ItemHistory/ItemHistory";
 import { useStarWars } from "../../../hooks/useStarWars";
 import "./HistoryPage.css";
 
-const HistoryPage = () => {
+const HistoryPage: FC = () => {
   const { peopleHistory, planetHistory, starshipHistory } = useStarWars();
   const people = peopleHistory.map((person) => (
     <li key={Math.random()}>{person.name}</li>

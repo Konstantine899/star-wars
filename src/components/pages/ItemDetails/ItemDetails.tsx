@@ -4,14 +4,14 @@ import { IPeople } from "../../../store/reducers/people/peopleReducer/initialSta
 import { IPlanet } from "../../../store/reducers/planets/planetsReducer/initialState/planetState";
 import { IStarship } from "../../../store/reducers/starships/starshipReducer/initialState/starshipState";
 
-interface IItemDetails {
+interface IProps {
   data: IPeople | IPlanet | IStarship | null;
   image: string;
   children: JSX.Element | JSX.Element[];
   loading: boolean;
 }
 
-const ItemDetails: FC<IItemDetails> = ({ children, data, image, loading }) => {
+const ItemDetails: FC<IProps> = ({ children, data, image, loading }) => {
   return (
     <>
       {data === null || loading ? null : (

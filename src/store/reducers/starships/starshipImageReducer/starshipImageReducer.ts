@@ -2,7 +2,7 @@ import {
   IStarshipImageState,
   starshipImageState,
 } from "./starshipImageState/starshipImageState";
-import { TStarshipImageAction } from "./type/TStarshipImageAction/TStarshipImageAction";
+import { TStarshipImageAction } from "./interfaces/IActions";
 import { StarshipImageTypes } from "./enum/StarshipImageTypes";
 
 export const starshipImageReducer = (

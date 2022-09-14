@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../RandomPlanet.css";
 import { useActions } from "../../../store/hooks/useActions";
 import { useStarWars } from "../../../hooks/useStarWars";
-import { IPlanet } from "../../../store/reducers/planets/planetsReducer/initialState/interface/IPlanetState";
+import { IPlanet } from "../../../store/reducers/planets/planetsReducer/initialState/planetState";
 import RandomPlanetDefault from "../RandomPlanetDefault/RandomPlanetDefault";
 import RandomPlanet from "../RandomPlanet";
 import { useInterval } from "../../../hooks/useInterval";

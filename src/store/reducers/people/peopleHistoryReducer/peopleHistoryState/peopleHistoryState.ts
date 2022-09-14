@@ -1,4 +1,4 @@
-import { IPeople } from "../../peopleReducer/initialState/interface/IPeople";
+import { IPeople } from "../../peopleReducer/initialState/peopleState";
 
 export interface IPeopleHistoryState {
   history: IPeople[];

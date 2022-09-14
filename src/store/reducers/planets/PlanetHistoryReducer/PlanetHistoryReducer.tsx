@@ -2,7 +2,7 @@ import {
   IPlanetHistoryState,
   PlanetHistoryState,
 } from "./PlanetHistoryState/PlanetHistoryState";
-import { TPlanetHistoryAction } from "./type/TPlanetHistoryAction";
+import { TPlanetHistoryAction } from "./interface/IActions";
 import { PlanetHistoryActionType } from "./enum/PlanetHistoryActionType";
 
 export const PlanetHistoryReducer = (

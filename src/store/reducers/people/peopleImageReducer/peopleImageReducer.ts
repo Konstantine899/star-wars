@@ -2,7 +2,7 @@ import {
   IPeopleImageState,
   peopleImageState,
 } from "./peopleImageState/peopleImageState";
-import { TPeopleImageAction } from "./type/TPeopleImageAction";
+import { TPeopleImageAction } from "./interfaces/IActions";
 import { PeopleImageTypes } from "./enum/PeopleImageTypes";
 
 export const peopleImageReducer = (

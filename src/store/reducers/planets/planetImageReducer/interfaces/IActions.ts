@@ -1,14 +1,18 @@
 import { PlanetImageTypes } from "../enum/PlanetImageTypes";
 
-export interface IFetchPlanetImage {
+interface IFetchPlanetImage {
   type: PlanetImageTypes.FETCH_PLANET_IMAGE;
 }
 
-export interface IFetchPlanetImageSuccess {
+interface IFetchPlanetImageSuccess {
   type: PlanetImageTypes.FETCH_PLANET_IMAGE_SUCCESS;
   image: string;
 }
-export interface IFetchPlanetImageError {
+interface IFetchPlanetImageError {
   type: PlanetImageTypes.FETCH_PLANET_IMAGE_ERROR;
   error: string | null;
 }
+export type TPlanetImageAction =
+  | IFetchPlanetImage
+  | IFetchPlanetImageSuccess
+  | IFetchPlanetImageError;

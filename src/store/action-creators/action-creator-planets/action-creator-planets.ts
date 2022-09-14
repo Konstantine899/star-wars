@@ -1,18 +1,18 @@
 import { Dispatch } from "redux";
 
-import { TPlanetAction } from "../../reducers/planets/planetsReducer/types/TPlanetAction";
+import { TPlanetAction } from "../../reducers/planets/planetsReducer/interfaces/IAction";
 import { PlanetActionTypes } from "../../reducers/planets/planetsReducer/enum/PlanetActionTypes";
 import {
   IPlanet,
   IPlanetState,
-} from "../../reducers/planets/planetsReducer/initialState/interface/IPlanetState";
+} from "../../reducers/planets/planetsReducer/initialState/planetState";
 import { SwapiUrl } from "../enum/SwapiUrl";
 import { gettingData } from "../services/gettingData";
 import { extractId } from "../services/extractId";
-import { TPlanetHistoryAction } from "../../reducers/planets/PlanetHistoryReducer/type/TPlanetHistoryAction";
+import { TPlanetHistoryAction } from "../../reducers/planets/PlanetHistoryReducer/interface/IActions";
 import { PlanetHistoryActionType } from "../../reducers/planets/PlanetHistoryReducer/enum/PlanetHistoryActionType";
 import NoPictute from "../image/no_picture.jpg";
-import { TPlanetImageAction } from "../../reducers/planets/planetImageReducer/type/TPlanetImageAction";
+import { TPlanetImageAction } from "../../reducers/planets/planetImageReducer/interfaces/IActions";
 import { PlanetImageTypes } from "../../reducers/planets/planetImageReducer/enum/PlanetImageTypes";
 import { ImagesUrl } from "../enum/ImagesUrl";
 import { fetchImage } from "../services/fetchImage";

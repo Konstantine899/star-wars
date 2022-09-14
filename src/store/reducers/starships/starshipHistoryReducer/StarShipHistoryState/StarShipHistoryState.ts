@@ -1,4 +1,4 @@
-import { IStarship } from "../../starshipReducer/initialState/interface/IStarshipState";
+import { IStarship } from "../../starshipReducer/initialState/starshipState";
 
 export interface IStarShipHistoryState {
   history: IStarship[];

@@ -1,4 +1,4 @@
-import { IPlanet } from "../../planetsReducer/initialState/interface/IPlanetState";
+import { IPlanet } from "../../planetsReducer/initialState/planetState";
 
 export interface IPlanetHistoryState {
   history: IPlanet[];

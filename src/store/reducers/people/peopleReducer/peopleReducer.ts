@@ -1,6 +1,6 @@
 import { peopleState } from "./initialState/peopleState";
-import { IPeopleState } from "./initialState/interface/IPeople";
-import { TPeopleAction } from "./types/TPeopleAction";
+import { IPeopleState } from "./initialState/peopleState";
+import { TPeopleAction } from "./interfaces/IActions";
 import { PeopleActionTypes } from "./enum/PeopleActionTypes";
 
 export const peopleReducer = (

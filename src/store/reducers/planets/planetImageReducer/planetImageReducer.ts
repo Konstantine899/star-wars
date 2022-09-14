@@ -2,7 +2,7 @@ import {
   IPlanetImageState,
   planetImageState,
 } from "./planetImageState/planetImageState";
-import { TPlanetImageAction } from "./type/TPlanetImageAction";
+import { TPlanetImageAction } from "./interfaces/IActions";
 import { PlanetImageTypes } from "./enum/PlanetImageTypes";
 
 export const planetImageReducer = (

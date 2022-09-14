@@ -1,7 +1,7 @@
 import { planetState } from "./initialState/planetState";
-import { TPlanetAction } from "./types/TPlanetAction";
+import { TPlanetAction } from "./interfaces/IAction";
 import { PlanetActionTypes } from "./enum/PlanetActionTypes";
-import { IPlanetState } from "./initialState/interface/IPlanetState";
+import { IPlanetState } from "./initialState/planetState";
 
 export const planetsReducer = (
   state = planetState,

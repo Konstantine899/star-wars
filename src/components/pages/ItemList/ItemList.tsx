@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
-import { IPeople } from "../../../store/reducers/people/peopleReducer/initialState/interface/IPeople";
-import { IPlanet } from "../../../store/reducers/planets/planetsReducer/initialState/interface/IPlanetState";
-import { IStarship } from "../../../store/reducers/starships/starshipReducer/initialState/interface/IStarshipState";
+import { IPeople } from "../../../store/reducers/people/peopleReducer/initialState/peopleState";
+import { IPlanet } from "../../../store/reducers/planets/planetsReducer/initialState/planetState";
+import { IStarship } from "../../../store/reducers/starships/starshipReducer/initialState/starshipState";
 import "./ItemList.css";
 import Spinner from "../../Spinner/Spinner";
 

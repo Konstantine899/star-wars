@@ -1,27 +1,33 @@
 import { PeopleActionTypes } from "../enum/PeopleActionTypes";
-import { IPeople } from "../initialState/interface/IPeople";
+import { IPeople } from "../initialState/peopleState";
 
-export interface IFetchPeopleAction {
+interface IFetchPeopleAction {
   type: PeopleActionTypes.FETCH_PEOPLE;
 }
-export interface IFetchPeopleSuccessActions {
+interface IFetchPeopleSuccessActions {
   type: PeopleActionTypes.FETCH_PEOPLE_SUCCESS;
   pages: number[];
   peopleCount: number;
   payload: IPeople[];
 }
-export interface IFetchPeopleErrorAction {
+interface IFetchPeopleErrorAction {
   type: PeopleActionTypes.FETCH_PEOPLE_ERROR;
   pages: number[];
   peopleCount: number;
   payload: string;
 }
 
-export interface ISetPeoplePage {
+interface ISetPeoplePage {
   type: PeopleActionTypes.SET_PEOPLE_PAGE;
 }
 
-export interface SearchPeople {
+interface ISearchPeople {
   type: PeopleActionTypes.SEARCH_PEOPLE;
   results: IPeople[];
 }
+export type TPeopleAction =
+  | IFetchPeopleAction
+  | IFetchPeopleSuccessActions
+  | IFetchPeopleErrorAction
+  | ISetPeoplePage
+  | ISearchPeople;

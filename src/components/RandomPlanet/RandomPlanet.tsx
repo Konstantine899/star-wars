@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { IPlanet } from "../../store/reducers/planets/planetsReducer/initialState/interface/IPlanetState";
+import { IPlanet } from "../../store/reducers/planets/planetsReducer/initialState/planetState";
 
 interface IProps {
   planet: IPlanet;

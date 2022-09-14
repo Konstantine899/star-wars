@@ -2,7 +2,7 @@ import {
   IStarShipHistoryState,
   StarShipHistoryState,
 } from "./StarShipHistoryState/StarShipHistoryState";
-import { TStarshipHistoryAction } from "./type/TStarshipHistoryAction";
+import { TStarshipHistoryAction } from "./interface/IAction";
 import { StarshipHistoryActionType } from "./enum/StarshipHistoryActionType";
 
 export const StarshipHistoryReducer = (

@@ -1,10 +1,10 @@
 import { Ichildren } from "../interface/Ichildren";
 import React, { useState } from "react";
-import { IPeople } from "../../store/reducers/people/peopleReducer/initialState/interface/IPeople";
+import { IPeople } from "../../store/reducers/people/peopleReducer/initialState/peopleState";
 import { useTypedSelector } from "../../store/hooks/useTypedSelector";
 import { StarWarsContext } from "../StarWarsContext";
-import { IPlanet } from "../../store/reducers/planets/planetsReducer/initialState/interface/IPlanetState";
-import { IStarship } from "../../store/reducers/starships/starshipReducer/initialState/interface/IStarshipState";
+import { IPlanet } from "../../store/reducers/planets/planetsReducer/initialState/planetState";
+import { IStarship } from "../../store/reducers/starships/starshipReducer/initialState/starshipState";
 import { useActions } from "../../store/hooks/useActions";
 
 export const StarWarsProvider = ({ children }: Ichildren) => {

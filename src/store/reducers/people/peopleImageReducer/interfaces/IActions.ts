@@ -1,15 +1,19 @@
 import { PeopleImageTypes } from "../enum/PeopleImageTypes";
 
-export interface IFetchImage {
+interface IFetchImage {
   type: PeopleImageTypes.FETCH_PEOPLE_IMAGE;
 }
 
-export interface IFetchImageSuccess {
+interface IFetchImageSuccess {
   type: PeopleImageTypes.FETCH_PEOPLE_IMAGE_SUCCESS;
   image: string;
 }
 
-export interface IFetchImageError {
+interface IFetchImageError {
   type: PeopleImageTypes.FETCH_PEOPLE_IMAGE_ERROR;
   error: string | null;
 }
+export type TPeopleImageAction =
+  | IFetchImage
+  | IFetchImageSuccess
+  | IFetchImageError;

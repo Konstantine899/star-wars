@@ -1,16 +1,16 @@
 import {
   IPeople,
   IPeopleState,
-} from "../../reducers/people/peopleReducer/initialState/interface/IPeople";
+} from "../../reducers/people/peopleReducer/initialState/peopleState";
 import { extractId } from "../services/extractId";
 import { Dispatch } from "redux";
-import { TPeopleAction } from "../../reducers/people/peopleReducer/types/TPeopleAction";
+import { TPeopleAction } from "../../reducers/people/peopleReducer/interfaces/IActions";
 import { PeopleActionTypes } from "../../reducers/people/peopleReducer/enum/PeopleActionTypes";
 import { gettingData } from "../services/gettingData";
 import { SwapiUrl } from "../enum/SwapiUrl";
-import { TPeopleHistoryAction } from "../../reducers/people/peopleHistoryReducer/type/TPeopleHistoryAction";
+import { TPeopleHistoryAction } from "../../reducers/people/peopleHistoryReducer/interrface/IActions";
 import { PeopleHistoryActionType } from "../../reducers/people/peopleHistoryReducer/enum/PeopleHistoryActionType";
-import { TPeopleImageAction } from "../../reducers/people/peopleImageReducer/type/TPeopleImageAction";
+import { TPeopleImageAction } from "../../reducers/people/peopleImageReducer/interfaces/IActions";
 import { PeopleImageTypes } from "../../reducers/people/peopleImageReducer/enum/PeopleImageTypes";
 import NoPictute from "../image/no_picture.jpg";
 import { ImagesUrl } from "../enum/ImagesUrl";

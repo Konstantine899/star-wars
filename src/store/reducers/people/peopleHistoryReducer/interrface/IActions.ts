@@ -1,7 +1,9 @@
 import { PeopleHistoryActionType } from "../enum/PeopleHistoryActionType";
-import { IPeople } from "../../peopleReducer/initialState/interface/IPeople";
+import { IPeople } from "../../peopleReducer/initialState/peopleState";
 
-export interface IGetPeopleHistory {
+interface IGetPeopleHistory {
   type: PeopleHistoryActionType.PEOPLE_HISTORY_PUSH;
   payload: IPeople;
 }
+
+export type TPeopleHistoryAction = IGetPeopleHistory;

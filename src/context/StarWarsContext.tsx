@@ -1,8 +1,8 @@
 import { createContext } from "react";
 
-import { IPeople } from "../store/reducers/people/peopleReducer/initialState/interface/IPeople";
-import { IStarship } from "../store/reducers/starships/starshipReducer/initialState/interface/IStarshipState";
-import { IPlanet } from "../store/reducers/planets/planetsReducer/initialState/interface/IPlanetState";
+import { IPeople } from "../store/reducers/people/peopleReducer/initialState/peopleState";
+import { IStarship } from "../store/reducers/starships/starshipReducer/initialState/starshipState";
+import { IPlanet } from "../store/reducers/planets/planetsReducer/initialState/planetState";
 
 interface IStarWarsCreateContext {
   allPeople: IPeople[];

@@ -1,7 +1,8 @@
 import { StarshipHistoryActionType } from "../enum/StarshipHistoryActionType";
-import { IStarship } from "../../starshipReducer/initialState/interface/IStarshipState";
+import { IStarship } from "../../starshipReducer/initialState/starshipState";
 
-export interface IGetStarshipHistory {
+interface IGetStarshipHistory {
   type: StarshipHistoryActionType.STARSHIP_HISTORY_PUSH;
   payload: IStarship;
 }
+export type TStarshipHistoryAction = IGetStarshipHistory;

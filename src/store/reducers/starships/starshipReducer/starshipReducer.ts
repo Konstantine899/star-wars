@@ -1,5 +1,5 @@
-import { IStarshipState } from "./initialState/interface/IStarshipState";
-import { TStarshipAction } from "./types/TStarshipAction";
+import { IStarshipState } from "./initialState/starshipState";
+import { TStarshipAction } from "./interfaces/IActions";
 import { StarshipsActionTypes } from "./enum/StarshipsActionTypes";
 import { starshipState } from "./initialState/starshipState";
 

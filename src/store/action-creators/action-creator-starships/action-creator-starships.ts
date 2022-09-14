@@ -1,20 +1,20 @@
 import {
   IStarship,
   IStarshipState,
-} from "../../reducers/starships/starshipReducer/initialState/interface/IStarshipState";
+} from "../../reducers/starships/starshipReducer/initialState/starshipState";
 import { extractId } from "../services/extractId";
 import { Dispatch } from "redux";
-import { TStarshipAction } from "../../reducers/starships/starshipReducer/types/TStarshipAction";
+import { TStarshipAction } from "../../reducers/starships/starshipReducer/interfaces/IActions";
 import { StarshipsActionTypes } from "../../reducers/starships/starshipReducer/enum/StarshipsActionTypes";
 import { gettingData } from "../services/gettingData";
 import { SwapiUrl } from "../enum/SwapiUrl";
-import { TStarshipHistoryAction } from "../../reducers/starships/starshipHistoryReducer/type/TStarshipHistoryAction";
+import { TStarshipHistoryAction } from "../../reducers/starships/starshipHistoryReducer/interface/IAction";
 import { StarshipHistoryActionType } from "../../reducers/starships/starshipHistoryReducer/enum/StarshipHistoryActionType";
 import { fetchImage } from "../services/fetchImage";
 import { ImagesUrl } from "../enum/ImagesUrl";
 import { fetchImageStatus } from "../services/fetchImageStatus";
 import NoPictute from "../image/no_picture.jpg";
-import { TStarshipImageAction } from "../../reducers/starships/starshipImageReducer/type/TStarshipImageAction/TStarshipImageAction";
+import { TStarshipImageAction } from "../../reducers/starships/starshipImageReducer/interfaces/IActions";
 import { StarshipImageTypes } from "../../reducers/starships/starshipImageReducer/enum/StarshipImageTypes";
 
 function transformStarships(body: IStarshipState) {

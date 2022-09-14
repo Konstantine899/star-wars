@@ -2,7 +2,7 @@ import {
   IPeopleHistoryState,
   peopleHistoryState,
 } from "./peopleHistoryState/peopleHistoryState";
-import { TPeopleHistoryAction } from "./type/TPeopleHistoryAction";
+import { TPeopleHistoryAction } from "./interrface/IActions";
 import { PeopleHistoryActionType } from "./enum/PeopleHistoryActionType";
 
 export const peopleHistoryReducer = (

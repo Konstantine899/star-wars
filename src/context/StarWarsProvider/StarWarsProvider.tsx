@@ -56,6 +56,7 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         peopleHistoryPush(item);
         return setPeople(item);
       }
+      return false;
     });
   };
 
@@ -65,6 +66,7 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         planetHistoryPush(item);
         return setPlanet(item);
       }
+      return false;
     });
   };
 
@@ -74,6 +76,7 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         starshipHistoryPush(item);
         return setStarship(item);
       }
+      return false;
     });
   };
 

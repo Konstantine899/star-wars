@@ -21,6 +21,7 @@ const RandomPlanetContainer = () => {
     const id = (Math.floor(Math.random() * 10) + 2).toString();
     allPlanets.filter((item) => {
       if (item.id === id) return setPlanet(item);
+      return false;
     });
   }, 3000);
 

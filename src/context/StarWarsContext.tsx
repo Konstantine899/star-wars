@@ -34,6 +34,7 @@ interface IStarWarsCreateContext {
   getStarshipImage: (id: string) => void;
   searchPeople: (query: string) => void;
   searchPlanet: (query: string) => void;
+  searchStarship: (query: string) => void;
 }
 
 export const StarWarsContext = createContext<IStarWarsCreateContext>(

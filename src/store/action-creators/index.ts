@@ -10,6 +10,7 @@ import {
   starshipHistoryPush,
   getStarshipsPage,
   getStarshipImage,
+  searchStarship,
 } from "./action-creator-starships/action-creator-starships";
 import {
   getAllPeople,
@@ -34,4 +35,5 @@ export {
   getStarshipImage,
   searchPeople,
   searchPlanet,
+  searchStarship,
 };

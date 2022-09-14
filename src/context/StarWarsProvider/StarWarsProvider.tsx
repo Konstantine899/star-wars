@@ -47,6 +47,7 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
     getStarshipImage,
     searchPeople,
     searchPlanet,
+    searchStarship,
   } = useActions();
 
   const getPeople = (id: string) => {
@@ -108,6 +109,7 @@ export const StarWarsProvider = ({ children }: Ichildren) => {
         getStarshipImage,
         searchPeople,
         searchPlanet,
+        searchStarship,
       }}
     >
       {children}

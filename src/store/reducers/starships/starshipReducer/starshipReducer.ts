@@ -35,6 +35,8 @@ export const starshipReducer = (
         pages: [],
         starshipsCount: 0,
       };
+    case StarshipsActionTypes.SEARCH_STARSHIP:
+      return { ...state, results: action.results };
     case StarshipsActionTypes.SET_STARSHIP_PAGE:
       return { ...state, loading: true, pages: [] };
     default:

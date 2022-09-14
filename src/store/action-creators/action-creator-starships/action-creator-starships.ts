@@ -118,6 +118,16 @@ export const getStarshipImage = (id: string) => {
   };
 };
 
+export const searchStarship = (query: string) => {
+  return async (dispatch: Dispatch<TStarshipAction>) => {
+    const response = await fetch(
+      `${SwapiUrl.BASE_URL}${SwapiUrl.STARSHIPS_URL}${SwapiUrl.QUERY_SEARCH_URL}${query}`
+    );
+    const data = transformStarships(await response.json());
+    dispatch({ type: StarshipsActionTypes.SEARCH_STARSHIP, results: data });
+  };
+};
+
 export const starshipHistoryPush = (starship: IStarship) => {
   return (dispatch: Dispatch<TStarshipHistoryAction>) => {
     dispatch({

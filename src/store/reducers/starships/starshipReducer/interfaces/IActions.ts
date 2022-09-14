@@ -20,3 +20,8 @@ export interface IFetchStarshipErrorAction {
 export interface ISetStarshipPage {
   type: StarshipsActionTypes.SET_STARSHIP_PAGE;
 }
+
+export interface ISearchStarship {
+  type: StarshipsActionTypes.SEARCH_STARSHIP;
+  results: IStarship[];
+}

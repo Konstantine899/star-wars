@@ -6,8 +6,6 @@ import { useActions } from "../../../store/hooks/useActions";
 import ItemDetails from "../ItemDetails/ItemDetails";
 import Details from "../ItemDetails/Details/Details";
 import Pagination from "../../Pagination/Pagination";
-import Search from "../../Search/Search";
-import "./PeoplePage.css";
 
 const PeoplePage = () => {
   const {
@@ -29,10 +27,10 @@ const PeoplePage = () => {
 
   return (
     <>
-      <div className="search-people">
-        <Search loading={loadingPeople} />
-      </div>
-
+      <Row
+        left={<Pagination pages={peoplePages} getPages={getPeoplePage} />}
+        right={<></>}
+      />
       <Row
         left={
           <ItemList
@@ -53,9 +51,6 @@ const PeoplePage = () => {
           </ItemDetails>
         }
       />
-      <div className="pagination">
-        <Pagination pages={peoplePages} getPages={getPeoplePage} />
-      </div>
     </>
   );
 };

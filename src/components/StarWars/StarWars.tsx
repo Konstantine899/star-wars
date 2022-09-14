@@ -1,6 +1,5 @@
 import { FC } from "react";
 import Header from "../Header/Header";
-import "./StarWars.css";
 import RandomPlanetContainer from "../RandomPlanet/RandomPlanetContainer/RandomPlanetContainer";
 import PeoplePage from "../pages/PeoplePage/PeoplePage";
 import PlanetsPage from "../pages/PlanetsPage/PlanetsPage";
